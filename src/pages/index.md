@@ -1,50 +1,44 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Combining pioneering science with the power of nature
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Why Kaldi
+  title: Our strategy
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Apollon is a Federally Licensed vertically integrated medical cannabis company operating in Jamaica. Through its subsidiaries and affiliates such as Apollon Formularies Jamaica (“AFJ”), has developed a suite of proprietary, trade secret, medical cannabis strains, technology, pharmaceutical products and therapeutic applications and AFJ is licensed and approved to cultivate, process, manufacture, perform research and develop, sell and distribute within the legalized hemp and medical cannabis industry in Jamaica .
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
   roasting and brewing seriously and we’re glad to pass that knowledge to
   anyone.
+featuretitle: Investment Highlights
 intro:
   blurbs:
     - image: /img/coffee.png
+      header: Low Cost
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
+        High quality production.
     - image: /img/coffee-gear.png
+      header: 3.5 Outdoor growing cycles
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
+        per year, ideal climate and soil conditions
     - image: /img/tutorials.png
+      header: Conditional approvals/ Granted Licences
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
+        cultivation, processing, extraction, transportation, retail (therapeutic) and R&D
     - image: /img/meeting-space.png
+      header: 7 Patents pending
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+        for medical cannibis products for sale with multiyear clinical trials
+    - image: /img/coffee-gear.png
+      header: Backed by clinical trials
+      text: >
+        true efficacy of Apollon's cannabis-based medicines is measured   
+    - image: /img/tutorials.png
+      header: Stong global recognition 
+      text: >
+        of Jamaican growers and brands             
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
@@ -52,19 +46,34 @@ intro:
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
 main:
-  heading: Great coffee with no compromises
+  heading: Our Products
   description: >
-    We hold our coffee to the highest standards from the shrub to the cup.
-    That’s why we’re meticulous and transparent about each step of the coffee’s
-    journey. We personally visit each farm to make sure the conditions are
-    optimal for the plants, farmers and the local environment.
+    Apollon has created and obtained proprietary hybrid medical cannabis pharmaceutical strains, technology, formulations, and treatment products.
+    Many of these formulations were created using Apollon’s proprietary artificial intelligence techniques and include: 
+  items: 
+    - Apollon NAUSEA™
+    - Apollon PAIN™
+    - Apollon SLEEP™
+    - Apollon ANTI-INFLAMMATORY™
+    - Apollon SEIZURES™
+    - Apollon APPETITE™
+    - Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner 
   image1:
     alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
+    image: /img/1.png
   image2:
     alt: A green cup of a coffee on a wooden table
-    image: /img/products-grid2.jpg
+    image: /img/2.png
   image3:
     alt: Coffee beans
-    image: /img/products-grid1.jpg
+    image: /img/3.png
+  image4:
+    alt: Coffee beans
+    image: /img/4.png
+  image5:
+    alt: Coffee beans
+    image: /img/5.png
+  image6:
+    alt: Coffee beans
+    image: /img/6.png            
 ---
