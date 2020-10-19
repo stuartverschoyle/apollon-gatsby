@@ -187,6 +187,7 @@ export const pageQuery = graphql`
           title
           description
         }
+        heading
         description
         featuretitle
         intro {
