@@ -7,7 +7,7 @@ import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const ProductPageTemplate = ({
+export const PartnerPageTemplate = ({
   image,
   title,
   heading,
@@ -104,7 +104,7 @@ export const ProductPageTemplate = ({
   </div>
 )
 
-ProductPageTemplate.propTypes = {
+PartnerPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -133,7 +133,7 @@ const PartnerPage = ({ data }) => {
 
   return (
     <Layout>
-      <ProductPageTemplate
+      <PartnerPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -158,7 +158,7 @@ PartnerPage.propTypes = {
 
 export default PartnerPage
 
-export const productPageQuery = graphql`
+export const partnerPageQuery = graphql`
   query PartnerPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
