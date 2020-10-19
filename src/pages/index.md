@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Combining pioneering science with the power of natur
+title: Combining pioneering science with the power of nature
 image: /img/home-jumbotron.jpg
 mainpitch:
-  title: Our strategy
+  title: Our strategye
   description: >
     Apollon is a Federally Licensed vertically integrated medical cannabis
     company operating in Jamaica. Through its subsidiaries and affiliates such
