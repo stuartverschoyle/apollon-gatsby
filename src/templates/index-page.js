@@ -148,7 +148,6 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         featuretitle = {frontmatter.featuretitle}

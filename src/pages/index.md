@@ -2,7 +2,6 @@
 templateKey: index-page
 title: Combining pioneering science with the power of nature
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
 mainpitch:
   title: Our strategy
   description: >
