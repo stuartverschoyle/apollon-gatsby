@@ -36,6 +36,7 @@ export const IndexPageTemplate = ({
           flexDirection: 'column',
         }}
       >
+        <h2>{heading}</h2>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
@@ -48,7 +49,6 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
-        <h2>{heading}</h2>
         <Link style={{
           width:'200px',
         }} className="btn" to="/blog">
