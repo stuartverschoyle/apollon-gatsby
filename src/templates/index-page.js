@@ -48,6 +48,7 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
+        <h2>{heading}</h2>
         <Link style={{
           width:'200px',
         }} className="btn" to="/blog">
