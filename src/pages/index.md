@@ -2,6 +2,7 @@
 templateKey: index-page
 title: Combining pioneering science with the power of nature
 image: /img/home-jumbotron.jpg
+heading: This is a test
 mainpitch:
   title: Our strategy
   description: >

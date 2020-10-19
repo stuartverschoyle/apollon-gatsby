@@ -9,6 +9,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 export const IndexPageTemplate = ({
   image,
   title,
+  heading,
   main,
   mainpitch,
   featuretitle,
@@ -130,6 +131,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  heading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   featuretitle: PropTypes.string,
@@ -147,6 +149,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         featuretitle = {frontmatter.featuretitle}
