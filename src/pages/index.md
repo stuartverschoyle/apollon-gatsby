@@ -1,8 +1,9 @@
 ---
+featuretitle: Investment Highlights
 templateKey: index-page
 title: Combining pioneering science with the power of nature
-image: /img/home-jumbotron.jpg
 heading: Apollon formularies U.K.
+image: /img/home-jumbotron.jpg
 mainpitch:
   title: Our strategy
   description: >
@@ -18,10 +19,9 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
   knowledge to anyone.
-featuretitle: Investment Highlights
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/screenshot-2020-10-19-at-20.58.40.png
       header: Low Cost
       text: |
         High quality production.
