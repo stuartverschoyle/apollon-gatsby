@@ -1,24 +1,23 @@
 ---
+featuretitle: Investment Highlights
 templateKey: index-page
 title: Combining pioneering science with the power of nature
-image: /img/home-jumbotron.jpg
 heading: Apollon formularies U.K.
+image: /img/home-jumbotron.jpg
 mainpitch:
   title: Our strategy
-  description: >
-    Apollon is a Federally Licensed vertically integrated medical cannabis
-    company operating in Jamaica. Through its subsidiaries and affiliates such
-    as Apollon Formularies Jamaica (“AFJ”), has developed a suite of
-    proprietary, trade secret, medical cannabis strains, technology,
+  description: "**Apollon** is a Federally Licensed vertically integrated medical
+    cannabis company operating in Jamaica. Through its subsidiaries and
+    affiliates such as **Apollon Formularies Jamaica** (“AFJ”), has developed a
+    suite of proprietary, trade secret, medical cannabis strains, technology,
     pharmaceutical products and therapeutic applications and AFJ is licensed and
     approved to cultivate, process, manufacture, perform research and develop,
     sell and distribute within the legalized hemp and medical cannabis industry
-    in Jamaica .
+    in Jamaica ."
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
   knowledge to anyone.
-featuretitle: Investment Highlights
 intro:
   blurbs:
     - image: /img/coffee.png
