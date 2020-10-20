@@ -30,6 +30,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
     "react-slick": "^0.27.12",
+    "remark-html": "^13.0.1",
     "uuid": "^7.0.0"
   },
   "keywords": [
