@@ -12,8 +12,6 @@ const toHTML = value => remark()
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
-  console.log(toHTML(data.mainpitch.description));
-
   if (data) {
     return (
       <IndexPageTemplate
@@ -23,7 +21,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         description={data.description}
         intro={data.intro || { blurbs: [] }}
         featuretitle={data.featuretitle}
-        mainpitch={data.mainpitch || {}}
+        mainpitch={toHTML(data.mainpitch) || {}}
         main={data.main || {}}
       />
     )
