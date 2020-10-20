@@ -5,7 +5,14 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import remark from 'remark'
+import remarkHTML from 'remark-html'
 
+const toHTML = value => remark()
+                            .use(remarkHTML)
+                            .processSync(value)
+                            .toString()
+                            
 export const IndexPageTemplate = ({
   image,
   title,
@@ -68,9 +75,8 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className="tile">
                     <div
-                      className="blog-post-content"
-                      dangerouslySetInnerHTML={{ __html: mainpitch.description }}
-                    />
+                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
+                    />                    
                   </div>
 
                 </div>
