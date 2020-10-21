@@ -12,7 +12,7 @@ const toHTML = value => remark()
                             .use(remarkHTML)
                             .processSync(value)
                             .toString()
-                            
+                             
 export const IndexPageTemplate = ({
   image,
   title,
@@ -41,17 +41,18 @@ export const IndexPageTemplate = ({
           justifyContent: 'space-around',
           alignItems: 'left',
           flexDirection: 'column',
+          maxWidth: '1110px',
+          margin: '0 auto'
         }}
       >
-        <h2>{heading}</h2>
+        <h2 style={{
+            color: 'white',
+            marginBottom: '10px'
+          }}>{heading}</h2>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
+            color: 'white'
           }}
         >
           {title}
@@ -59,26 +60,29 @@ export const IndexPageTemplate = ({
         <Link style={{
           width:'200px',
         }} className="btn" to="/blog">
-          Read more
+          Learn more
         </Link>
       </div>
     </div>
     <section className="section section--gradient">
-      <div className="container">
+      <div className="container over-hero">
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                <div className="content columns">
+                  <div className="column is-6">
+                    <div className="tile">
+                      <h1 className="title">{mainpitch.title}</h1>
+                    </div>
                   </div>
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                    />                    
+                  <div className="column is-6">
+                    <div className="tile">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
+                      />                    
+                    </div>
                   </div>
-
                 </div>
                 <div className="tile">
                     <h2 className="title">{featuretitle}</h2>
@@ -107,26 +111,15 @@ export const IndexPageTemplate = ({
                           <PreviewCompatibleImage imageInfo={main.image1} />
                         </article>                    
                       </div>
-                      <div className="tile is-parent is-vertical" style={{flexGrow: 2}}>
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image6} />
-                        </article>
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image5} />
-                        </article>                        
-                      </div>
                       <div className="tile is-parent is-vertical" style={{flexGrow: 0.9}}>
                         <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image4} />
-                        </article>
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image3} />
+                        <PreviewCompatibleImage imageInfo={main.image3} />
                         </article>
                         <article className="tile is-child">
                           <PreviewCompatibleImage imageInfo={main.image2} />
                         </article>                                                
                       </div>
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -240,42 +233,12 @@ export const pageQuery = graphql`
             alt
             image {
               childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
+                fluid(maxWidth: 526, quality: 92) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-          }
-          image4 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image5 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image6 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }                              
+          }                                                                    
         }        
       }
     }
