@@ -70,5 +70,24 @@ main:
   image3:
     alt: Coffee beans
     image: /img/3.png
+carousel:
+  image1:
+    alt: Provide physician supervised clinical trials for patient outcomes validation
+    image: /img/carousel/physician.png
+  image2:
+    alt: Accurately determine appropriate disease and patient specific formulations
+    image: /img/carousel/oil.png
+  image3:
+    alt: Provide physician supervised clinical trials for patient outcomes validation
+    image: /img/carousel/physician.png
+  image4:
+    alt: Accurately determine appropriate disease and patient specific formulations
+    image: /img/carousel/oil.png
+  image5:
+    alt: Provide physician supervised clinical trials for patient outcomes validation
+    image: /img/carousel/physician.png
+  image6:
+    alt: Accurately determine appropriate disease and patient specific formulations
+    image: /img/carousel/oil.png  
    
 ---

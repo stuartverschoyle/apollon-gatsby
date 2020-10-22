@@ -5,8 +5,21 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+
+import Slider from "react-slick"
+import "./slick/slick.css"
+import "./slick/slick-theme.css"
+
 import remark from 'remark'
 import remarkHTML from 'remark-html'
+
+const settings = {
+  dots: true,
+  infinite: true,
+  autoplay: false,
+  slidesToShow: 1.5,
+  slidesToScroll: 1.5  
+}
 
 const toHTML = value => remark()
                             .use(remarkHTML)
@@ -16,8 +29,9 @@ const toHTML = value => remark()
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
-  main,
+  heading, 
+  main, 
+  carousel, 
   mainpitch,
   featuretitle,
   intro,
@@ -103,6 +117,37 @@ export const IndexPageTemplate = ({
                     </ul>
                   </div>
                 </div>
+                <div className="columns">
+                  <div className="column is-12">
+                    <Slider {...settings} className="overflow-hidden">
+                      <div>
+                        <PreviewCompatibleImage imageInfo={carousel.image1} />
+                        <p>{carousel.image1.alt}</p>
+                      </div>
+                      <div>
+                      <PreviewCompatibleImage imageInfo={carousel.image2} />
+                        <p>{carousel.image2.alt}</p>
+                      </div>
+                      <div>
+                      <PreviewCompatibleImage imageInfo={carousel.image3} />
+                        <p>{carousel.image3.alt}</p>
+                      </div> 
+                      <div>
+                      <PreviewCompatibleImage imageInfo={carousel.image4} />
+                        <p>{carousel.image4.alt}</p>
+                      </div> 
+                      <div>
+                      <PreviewCompatibleImage imageInfo={carousel.image5} />
+                        <p>{carousel.image5.alt}</p>
+                      </div> 
+                      <div>
+                      <PreviewCompatibleImage imageInfo={carousel.image6} />
+                        <p>{carousel.image6.alt}</p>
+                      </div>                                                                                        
+                  </Slider>                    
+                  </div>                
+                </div>
+
                 <div className="tile is-ancestor">
                   <div className="tile is-vertical">
                     <div className="tile">
@@ -158,6 +203,7 @@ const IndexPage = ({ data }) => {
         featuretitle = {frontmatter.featuretitle}
         intro={frontmatter.intro}
         main={frontmatter.main}
+        carousel={frontmatter.carousel}
       />
     </Layout>
   )
@@ -204,6 +250,68 @@ export const pageQuery = graphql`
             header
             text
           }
+        }
+        carousel {
+          image1 {
+            alt
+            image { 
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }
+          image2 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }
+          image3 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }
+          image4 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }
+          image5 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }
+          image6 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 733, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }              
+            }
+          }                                               
         }
         main {
           heading

@@ -23,6 +23,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         featuretitle={data.featuretitle}
         mainpitch={toHTML(data.mainpitch.title) || toHTML(data.mainpitch.description)}
         main={data.main || {}}
+        carousel={data.carousel || {}}
       />
     )
   } else {
