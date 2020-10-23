@@ -53,41 +53,56 @@ main:
     pharmaceutical strains, technology, formulations, and treatment products.
     Many of these formulations were created using Apollon’s proprietary
     artificial intelligence techniques and include:
-  items:
-  - Apollon NAUSEA™
-  - Apollon PAIN™
-  - Apollon SLEEP™
-  - Apollon ANTI-INFLAMMATORY™
-  - Apollon SEIZURES™
-  - Apollon APPETITE™
-  - Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner
+
+    * Apollon NAUSEA™
+
+    * Apollon PAIN™
+
+    * Apollon SLEEP™
+
+    * Apollon ANTI-INFLAMMATORY™
+
+    * Apollon SEIZURES™
+
+    * Apollon APPETITE™
+    
+    * Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner
   image1:
-    alt: A close-up of a paper filter filled with ground coffee
-    image: /img/1.png
+    alt: 
+    image: /img/homepage/products_hero@2x.png
   image2:
-    alt: A green cup of a coffee on a wooden table
-    image: /img/2.png
+    alt: Apollon APPETITE
+    image: /img/homepage/products_01@2x.png
   image3:
-    alt: Coffee beans
-    image: /img/3.png
+    alt: Apollon CANCER
+    image: /img/homepage/products_02@2x.png
+  image4:
+    alt: Apollon PAIN
+    image: /img/homepage/products_03@2x.png
+  image5:
+    alt: Apollon NAUSEA
+    image: /img/homepage/products_04@2x.png
+  image6:
+    alt: Apollon SEIZURES
+    image: /img/homepage/products_05@2x.png
 carousel:
   image1:
     alt: Provide physician supervised clinical trials for patient outcomes validation
-    image: /img/carousel/physician.png
+    image: /img/carousel/physician.jpg
   image2:
     alt: Accurately determine appropriate disease and patient specific formulations
-    image: /img/carousel/oil.png
+    image: /img/carousel/oil.jpg
   image3:
     alt: Provide physician supervised clinical trials for patient outcomes validation
-    image: /img/carousel/physician.png
+    image: /img/carousel/physician.jpg
   image4:
     alt: Accurately determine appropriate disease and patient specific formulations
-    image: /img/carousel/oil.png
+    image: /img/carousel/oil.jpg
   image5:
     alt: Provide physician supervised clinical trials for patient outcomes validation
-    image: /img/carousel/physician.png
+    image: /img/carousel/physician.jpg
   image6:
     alt: Accurately determine appropriate disease and patient specific formulations
-    image: /img/carousel/oil.png  
+    image: /img/carousel/oil.jpg
    
 ---

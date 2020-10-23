@@ -13,12 +13,15 @@ import "./slick/slick-theme.css"
 import remark from 'remark'
 import remarkHTML from 'remark-html'
 
+
+
 const settings = {
+  arrows: true,
   dots: true,
-  infinite: true,
+  infinite: false,
   autoplay: false,
   slidesToShow: 1.5,
-  slidesToScroll: 1.5  
+  slidesToScroll: 1 ,
 }
 
 const toHTML = value => remark()
@@ -73,6 +76,7 @@ export const IndexPageTemplate = ({
         </h1>
         <Link style={{
           width:'200px',
+          marginTop: '30px'
         }} className="btn" to="/blog">
           Learn more
         </Link>
@@ -87,7 +91,7 @@ export const IndexPageTemplate = ({
                 <div className="content columns">
                   <div className="column is-6">
                     <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
+                      <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
                   </div>
                   <div className="column is-6">
@@ -98,76 +102,97 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                <div className="tile">
-                    <h2 className="title">{featuretitle}</h2>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {main.heading}
-                    </h3>
-                    <p>{main.description}</p>
-                    <ul>
-                      {main.items.map((item) => (
-                        <li key={item} className="is-size-5">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <Slider {...settings} className="overflow-hidden">
-                      <div>
-                        <PreviewCompatibleImage imageInfo={carousel.image1} />
-                        <p>{carousel.image1.alt}</p>
-                      </div>
-                      <div>
-                      <PreviewCompatibleImage imageInfo={carousel.image2} />
-                        <p>{carousel.image2.alt}</p>
-                      </div>
-                      <div>
-                      <PreviewCompatibleImage imageInfo={carousel.image3} />
-                        <p>{carousel.image3.alt}</p>
-                      </div> 
-                      <div>
-                      <PreviewCompatibleImage imageInfo={carousel.image4} />
-                        <p>{carousel.image4.alt}</p>
-                      </div> 
-                      <div>
-                      <PreviewCompatibleImage imageInfo={carousel.image5} />
-                        <p>{carousel.image5.alt}</p>
-                      </div> 
-                      <div>
-                      <PreviewCompatibleImage imageInfo={carousel.image6} />
-                        <p>{carousel.image6.alt}</p>
-                      </div>                                                                                        
-                  </Slider>                    
-                  </div>                
-                </div>
-
-                <div className="tile is-ancestor">
-                  <div className="tile is-vertical">
-                    <div className="tile">
-                    <div className="tile is-parent is-vertical" style={{flexGrow: 3.07}}>
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image1} />
-                        </article>                    
-                      </div>
-                      <div className="tile is-parent is-vertical" style={{flexGrow: 0.9}}>
-                        <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image3} />
-                        </article>
-                        <article className="tile is-child">
-                          <PreviewCompatibleImage imageInfo={main.image2} />
-                        </article>                                                
-                      </div>
-                    </div> 
-                  </div>
-                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">
+        <Slider {...settings} className="overflow-hidden carousel">
+          <div className="has-padding-right-twenty">
+            <PreviewCompatibleImage imageInfo={carousel.image1} />
+            <p><span>1 / </span>{carousel.image1.alt}</p>
+          </div>
+          <div className="has-padding-right-twenty">
+          <PreviewCompatibleImage imageInfo={carousel.image2} />
+            <p><span>2 / </span>{carousel.image2.alt}</p>
+          </div>
+          <div className="has-padding-right-twenty">
+          <PreviewCompatibleImage imageInfo={carousel.image3} />
+            <p><span>3 / </span>{carousel.image3.alt}</p>
+          </div> 
+          <div className="has-padding-right-twenty">
+          <PreviewCompatibleImage imageInfo={carousel.image4} />
+            <p><span>4 / </span>{carousel.image4.alt}</p>
+          </div> 
+          <div className="has-padding-right-twenty">
+          <PreviewCompatibleImage imageInfo={carousel.image5} />
+            <p><span>5 / </span>{carousel.image5.alt}</p>
+          </div> 
+          <div className="has-padding-right-twenty">
+          <PreviewCompatibleImage imageInfo={carousel.image6} />
+            <p><span>6 / </span>{carousel.image6.alt}</p>
+          </div>                                                                                        
+        </Slider>                    
+        </div>                
+      </div> 
+    </section>
+
+    <section className="section section--gradient highlights">
+      <div className="container">                        
+        <div className="content">
+          <div className="has-text-centered">
+              <h1 class="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
+          </div>                              
+          <Features gridItems={intro.blurbs} />
+        </div>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">                        
+        <div className="content">    
+          <div className="columns">
+            <div className="column is-6">
+              <div className="tile">
+                <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{main.heading}</h1>
+              </div>
+            </div> 
+            <div className="column is-6 productlist">
+            <div
+                  dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">                        
+        <div className="content">     
+          <div className="tile is-ancestor">
+            <div className="tile is-vertical">
+              <div className="tile">
+                <div className="tile is-parent is-vertical" style={{flexGrow: 2.3}}>
+                  <article className="tile is-child">
+                    <PreviewCompatibleImage imageInfo={main.image1} />
+                  </article>                    
+                </div>
+                <div className="tile is-parent is-vertical" style={{flexGrow: 1.08}}>
+                  <article className="tile is-child">
+                  <PreviewCompatibleImage imageInfo={main.image2} />
+                  <PreviewCompatibleImage imageInfo={main.image3} />
+                  </article>
+                </div>
+                <div className="tile is-parent is-vertical" style={{flexGrow: 0.895}}>
+                  <article className="tile is-child">
+                  <PreviewCompatibleImage imageInfo={main.image4} />
+                  <PreviewCompatibleImage imageInfo={main.image5} />
+                  <PreviewCompatibleImage imageInfo={main.image6} />
+                  </article>                                                
+                </div>
+              </div> 
             </div>
           </div>
         </div>
@@ -242,7 +267,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 356, quality: 64) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -316,7 +341,6 @@ export const pageQuery = graphql`
         main {
           heading
           description
-          items
           image1 {
             alt
             image {
@@ -346,7 +370,37 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }                                                                    
+          }
+          image4 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 526, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image5 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 526, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          image6 {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 526, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }                                                                                                  
         }        
       }
     }

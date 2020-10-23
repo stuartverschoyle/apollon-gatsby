@@ -1,12 +1,12 @@
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+// Apollon
+$apollon-green: #6EC489
+$apollon-green-invert: #fff
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $apollon-green
+$primary-invert: $apollon-green-invert
 $body-color: #333
 $black: #2b2523
 $size-1: 80px
@@ -97,9 +97,9 @@ footer.footer
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-item-active-color: $apollon-green-invert
+$menu-item-active-background-color:	$apollon-green-invert
+$menu-list-border-left: 1px solid $apollon-green-invert
 $menu-label-color: $white-ter
 
 .menu-label
@@ -132,6 +132,15 @@ $menu-label-color: $white-ter
 
 
 @import "~bulma"
+body 
+  line-height: 24px
+
+.section 
+  padding: 3rem 0 3rem 0;
+
+.highlights
+  .section
+      padding: 0 0 0 0;
 
 .container:not(.is-max-desktop):not(.is-max-widescreen) 
     max-width: 1110px;
@@ -164,9 +173,6 @@ h1, h2
 .over-hero
     background: #fff;
     margin-top: -150px;
-
-.content h1
-  font-size: 3vw;
 
 // responsiveness
 +tablet-only
@@ -224,3 +230,17 @@ h1
 
 .has-margin-bottom-twenty
   margin-bottom: 20px!important  
+
+.has-padding-right-twenty 
+  padding-right: 20px!important  
+
+.carousel
+  margin-left: 14vw
+  span 
+    color: $primary
+  p
+    padding: 10px 0
+
+.productlist ul
+  padding: 0
+  list-style: none
