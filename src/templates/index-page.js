@@ -152,7 +152,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section className="section section--gradient">
-      <div className="container">                        
+      <div className="container column">                        
         <div className="content">    
           <div className="columns">
             <div className="column is-6">
