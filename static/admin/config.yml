@@ -36,10 +36,12 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Heading, name: heading, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},, {label: Header, name: header, widget: text}]}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Featuretitle, name: featuretitle, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text}]}]}
+          - {label: Main, name: main, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
           - {label: Carousel, name: carousel, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
           - {label: Prodcuts, name: products, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
       - file: "src/pages/about/index.md"
