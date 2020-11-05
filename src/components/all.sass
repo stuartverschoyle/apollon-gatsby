@@ -75,9 +75,23 @@ $size-3: 33px
     &:hover
       color:#6EC489
       background:#fff
+    &.btnInvert 
+      background: #6EC489
+      color: #fff
+      &:hover
+        background: #fff
+        color: #6EC489
+        -webkit-box-shadow: inset 0 0 0 2px #6EC489
+        box-shadow: inset 0 0 0 2px #6EC489        
+      
 
 .margin-top-0
   margin-top: 0 !important
+
+.navbar-item.logo 
+  position: absolute
+  top: 30px
+  left: 30px
 
 .navbar-item .icon
   color: $primary
@@ -208,6 +222,7 @@ h1
     background-size: 40px;
     background-position: top right;
     margin-left: 10px;
+    position: absolute;
 
 .menu-list a 
     color: #000
@@ -247,12 +262,10 @@ h1
   padding-right: 20px!important  
 
 .carousel
-  margin-left: 14vw
   span 
     color: $primary
   p
     padding: 10px 0
 
 .productlist ul
-  padding: 0
-  list-style: none
+  padding: 20px 40px

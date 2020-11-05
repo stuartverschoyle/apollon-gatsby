@@ -52,7 +52,7 @@
 {
     position: relative;
     top: 0;
-    left: 0;
+    left: 10vw;
 
     display: block;
     margin-left: auto;
@@ -73,7 +73,9 @@
 {
     visibility: hidden;
 }
-
+.slick-dots {
+    left:10vw;
+}
 .slick-slide
 {
     display: none;

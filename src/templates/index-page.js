@@ -4,25 +4,10 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-
-import Slider from "react-slick"
-import "./slick/slick.css"
-import "./slick/slick-theme.css"
+import Carousel from '../components/Carousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
-
-
-
-const settings = {
-  arrows: true,
-  dots: true,
-  infinite: false,
-  autoplay: false,
-  slidesToShow: 1.5,
-  slidesToScroll: 1 ,
-}
 
 const toHTML = value => remark()
                             .use(remarkHTML)
@@ -35,6 +20,7 @@ export const IndexPageTemplate = ({
   heading, 
   main, 
   carousel, 
+  products, 
   mainpitch,
   featuretitle,
   intro,
@@ -59,7 +45,7 @@ export const IndexPageTemplate = ({
           alignItems: 'left',
           flexDirection: 'column',
           maxWidth: '1110px',
-          margin: '0 auto'
+          margin: '0 auto',
         }}
       >
         <h2 style={{
@@ -86,115 +72,102 @@ export const IndexPageTemplate = ({
       <div className="container over-hero">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-6">
+                  <div className="column is-3 is-offset-1">
                     <div className="tile">
                       <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
                   </div>
-                  <div className="column is-6">
+                  <div className="column is-6 is-offset-1">
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                      />                    
+                      />                 
                     </div>
+                    <Link style={{
+                      width:'322px',
+                      marginTop: '30px'
+                    }} className="btn btnInvert" to="/blog">
+                      Learn more about Apollon
+                  </Link>                     
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
+                  </div>
+                </div>
+                <div className="column is-6 is-offset-1">
+                  <div className="tile">
+                    <div
+                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
+                    />                    
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>    
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">  
+        <Carousel gridItems={carousel.slides}></Carousel>               
+        </div>                
+      </div> 
+    </section>
+
+    <section className="section section--gradient">
+      <div className="container column">                        
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{main.heading}</h1>
+                  </div>
+                </div> 
+                <div className="column is-6 is-offset-1 productlist">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
     <section className="section section--gradient" style={{marginBottom:'70px'}}>
       <div className="columns">
         <div className="column is-12 ">
-        <Slider {...settings} className="overflow-hidden carousel">
-          <div className="has-padding-right-twenty">
-            <PreviewCompatibleImage imageInfo={carousel.image1} />
-            <p><span>1 / </span>{carousel.image1.alt}</p>
-          </div>
-          <div className="has-padding-right-twenty">
-          <PreviewCompatibleImage imageInfo={carousel.image2} />
-            <p><span>2 / </span>{carousel.image2.alt}</p>
-          </div>
-          <div className="has-padding-right-twenty">
-          <PreviewCompatibleImage imageInfo={carousel.image3} />
-            <p><span>3 / </span>{carousel.image3.alt}</p>
-          </div> 
-          <div className="has-padding-right-twenty">
-          <PreviewCompatibleImage imageInfo={carousel.image4} />
-            <p><span>4 / </span>{carousel.image4.alt}</p>
-          </div> 
-          <div className="has-padding-right-twenty">
-          <PreviewCompatibleImage imageInfo={carousel.image5} />
-            <p><span>5 / </span>{carousel.image5.alt}</p>
-          </div> 
-          <div className="has-padding-right-twenty">
-          <PreviewCompatibleImage imageInfo={carousel.image6} />
-            <p><span>6 / </span>{carousel.image6.alt}</p>
-          </div>                                                                                        
-        </Slider>                    
+        <Carousel gridItems={products.slides}></Carousel>                   
         </div>                
       </div> 
     </section>
-
     <section className="section section--gradient highlights">
       <div className="container">                        
         <div className="content">
           <div className="has-text-centered">
-              <h1 class="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
+              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
           </div>                              
           <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient">
-      <div className="container column">                        
-        <div className="content">    
-          <div className="columns">
-            <div className="column is-6">
-              <div className="tile">
-                <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{main.heading}</h1>
-              </div>
-            </div> 
-            <div className="column is-6 productlist">
-            <div
-                  dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient">
-      <div className="container">                        
-        <div className="content">     
-          <div className="tile is-ancestor">
-            <div className="tile is-vertical">
-              <div className="tile">
-                <div className="tile is-parent is-vertical" style={{flexGrow: 2.3}}>
-                  <article className="tile is-child">
-                    <PreviewCompatibleImage imageInfo={main.image1} />
-                  </article>                    
-                </div>
-                <div className="tile is-parent is-vertical" style={{flexGrow: 1.08}}>
-                  <article className="tile is-child">
-                  <PreviewCompatibleImage imageInfo={main.image2} />
-                  <PreviewCompatibleImage imageInfo={main.image3} />
-                  </article>
-                </div>
-                <div className="tile is-parent is-vertical" style={{flexGrow: 0.895}}>
-                  <article className="tile is-child">
-                  <PreviewCompatibleImage imageInfo={main.image4} />
-                  <PreviewCompatibleImage imageInfo={main.image5} />
-                  <PreviewCompatibleImage imageInfo={main.image6} />
-                  </article>                                                
-                </div>
-              </div> 
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -206,12 +179,17 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
   featuretitle: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
   main: PropTypes.object,
+  carousel: PropTypes.shape({
+    slides: PropTypes.array,
+  }), 
+  products: PropTypes.shape({
+    slides: PropTypes.array,
+  }),    
 }
 
 const IndexPage = ({ data }) => {
@@ -224,11 +202,11 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
         featuretitle = {frontmatter.featuretitle}
         intro={frontmatter.intro}
         main={frontmatter.main}
         carousel={frontmatter.carousel}
+        products={frontmatter.products}
       />
     </Layout>
   )
@@ -259,9 +237,10 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          subtitle
+          subdescription          
         }
         heading
-        description
         featuretitle
         intro {
           blurbs {
@@ -276,132 +255,34 @@ export const pageQuery = graphql`
             text
           }
         }
-        carousel {
-          image1 {
-            alt
-            image { 
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }
-          image2 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }
-          image4 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }
-          image5 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }
-          image6 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 733, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }              
-            }
-          }                                               
-        }
         main {
           heading
-          description
-          image1 {
-            alt
+          description                                                                                                 
+        }
+        carousel {
+          slides {
             image {
               childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
+                fluid(maxWidth: 356, quality: 64) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
+            alt
           }
-          image2 {
-            alt
+        }
+        products {
+          slides {
             image {
               childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
+                fluid(maxWidth: 356, quality: 64) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
+            alt
           }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image4 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image5 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image6 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }                                                                                                  
-        }        
+        }                       
       }
     }
   }

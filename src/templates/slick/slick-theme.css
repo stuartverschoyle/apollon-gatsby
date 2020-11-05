@@ -36,7 +36,7 @@
 }
 
 .slick-prev{
-  left: 0px;
+  left: 10vw;
   width: 70px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .slick-next{
-  left: 70px
+  left: calc(10vw + 70px);
 }
 
 .slick-next:hover,

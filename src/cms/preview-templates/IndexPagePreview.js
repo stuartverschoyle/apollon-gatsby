@@ -15,15 +15,15 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
-        imager={getAsset(data.image)}
+        image={getAsset(data.image)}
         title={data.title}
         heading={data.heading}
-        description={data.description}
         intro={data.intro || { blurbs: [] }}
         featuretitle={data.featuretitle}
-        mainpitch={toHTML(data.mainpitch.title) || toHTML(data.mainpitch.description)}
+        mainpitch={toHTML(data.mainpitch.title) || toHTML(data.mainpitch.description) || toHTML(data.mainpitch.subtitle) || toHTML(data.mainpitch.subdescription)}
         main={data.main || {}}
-        carousel={data.carousel || {}}
+        carousel={data.intro || { slides: [] }}
+        products={data.intro || { slides: [] }}
       />
     )
   } else {

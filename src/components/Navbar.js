@@ -38,11 +38,11 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
+        <Link to="/" className="navbar-item logo" title="Logo">
+          <img src={logo} alt="Apollon" style={{ width: '219px' }} />
+        </Link>
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Apollon" style={{ width: '219px' }} />
-            </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
