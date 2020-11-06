@@ -1,62 +1,289 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import Features from '../components/Features'
+import Carousel from '../components/Carousel'
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+import remark from 'remark'
+import remarkHTML from 'remark-html'
 
-  return (
+const toHTML = value => remark()
+                            .use(remarkHTML)
+                            .processSync(value)
+                            .toString()
+                             
+export const AboutPageTemplate = ({
+  title,
+  image,
+  mainpitch,
+  heading, 
+  featuretitle,
+  intro,
+  main, 
+  carousel, 
+  products, 
+
+}) => (
+  <div>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundPosition: `top left`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          maxWidth: '1110px',
+          margin: '0 auto',
+        }}
+      >
+        <h2 style={{
+            color: 'white',
+            marginBottom: '10px'
+          }}>{heading}</h2>
+        <h1
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white'
+          }}
+        >
+          {title}
+        </h1>
+        <Link style={{
+          width:'200px',
+          marginTop: '30px'
+        }} className="btn" to="/blog">
+          Learn more
+        </Link>
+      </div>
+    </div>
     <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
+      <div className="container over-hero">
+        <div className="section">
+          <div className="columns">
+            <div className="column is-12">
+              <div className="content">
+                <div className="content columns">
+                  <div className="column is-3 is-offset-1">
+                    <div className="tile">
+                      <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
+                    </div>
+                  </div>
+                  <div className="column is-6 is-offset-1">
+                    <div className="tile">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
+                      />                 
+                    </div>
+                    <Link style={{
+                      width:'322px',
+                      marginTop: '30px'
+                    }} className="btn btnInvert" to="/blog">
+                      Learn more about Apollon
+                  </Link>                     
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
+                  </div>
+                </div>
+                <div className="column is-6 is-offset-1">
+                  <div className="tile">
+                    <div
+                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
+                    />                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>    
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">  
+        <Carousel gridItems={carousel.slides} />
+        </div>                
+      </div> 
+    </section>
+
+    <section className="section section--gradient">
+      <div className="container column">                        
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{main.heading}</h1>
+                  </div>
+                </div> 
+                <div className="column is-6 is-offset-1 productlist">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">
+        <Carousel gridItems={products.slides} />             
+        </div>                
+      </div> 
+    </section>
+    <section className="section section--gradient highlights">
+      <div className="container">                        
+        <div className="content">
+          <div className="has-text-centered">
+              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
+          </div>                              
+          <Features gridItems={intro.blurbs} />
+        </div>
+      </div>
+    </section>
+  </div>
+)
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.string,
+  heading: PropTypes.string,
+  mainpitch: PropTypes.object,
+  featuretitle: PropTypes.string,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
+  main: PropTypes.object,
+  carousel: PropTypes.shape({
+    slides: PropTypes.array,
+  }), 
+  products: PropTypes.shape({
+    slides: PropTypes.array,
+  }),    
 }
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        image={frontmatter.image}
+        title={frontmatter.title}
+        heading={frontmatter.heading}
+        mainpitch={frontmatter.mainpitch}
+        featuretitle = {frontmatter.featuretitle}
+        intro={frontmatter.intro}
+        main={frontmatter.main}
+        carousel={frontmatter.carousel}
+        products={frontmatter.products}
       />
     </Layout>
   )
 }
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 }
 
 export default AboutPage
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+export const pageQuery = graphql`
+  query AboutPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       frontmatter {
         title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        mainpitch {
+          title
+          description
+          subtitle
+          subdescription          
+        }
+        heading
+        featuretitle
+        intro {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 356, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            header
+            text
+          }
+        }
+        main {
+          heading
+          description                                                                                                 
+        }
+        carousel {
+          slides {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
+        }
+        products {
+          slides {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 356, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
+        }                       
       }
     }
   }

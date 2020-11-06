@@ -1,9 +1,9 @@
 ---
-templateKey: index-page
+templateKey: 'index-page'
 title: Combining pioneering science with the power of nature
 image: /img/Hero_image@2x.png
 mainpitch:
-  title: Apollon
+  title: Who is Apollon
   description: >
     Apollon’s aims to create a globally recognised brand synonymous with quality, consistency potency on a range of products for a range of conditions within the medical cannabis space.
 
@@ -62,7 +62,7 @@ main:
     * Apollon APPETITE™
     
     * Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner
-carousel:
+carousel: 
   slides: 
     - image: /img/physician.jpg 
       alt: Provide physician supervised clinical trials for patient outcomes validation
