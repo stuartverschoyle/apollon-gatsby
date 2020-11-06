@@ -15,15 +15,16 @@ const toHTML = value => remark()
                             .toString()
                              
 export const IndexPageTemplate = ({
-  image,
   title,
+  image,
+  mainpitch,
   heading, 
+  featuretitle,
+  intro,
   main, 
   carousel, 
   products, 
-  mainpitch,
-  featuretitle,
-  intro,
+
 }) => (
   <div>
     <div
@@ -128,7 +129,7 @@ export const IndexPageTemplate = ({
     <section className="section section--gradient" style={{marginBottom:'70px'}}>
       <div className="columns">
         <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides}></Carousel>               
+        <Carousel gridItems={carousel.slides} />
         </div>                
       </div> 
     </section>
@@ -157,7 +158,7 @@ export const IndexPageTemplate = ({
     <section className="section section--gradient" style={{marginBottom:'70px'}}>
       <div className="columns">
         <div className="column is-12 ">
-        <Carousel gridItems={products.slides}></Carousel>                   
+        <Carousel gridItems={products.slides} />             
         </div>                
       </div> 
     </section>
@@ -263,7 +264,7 @@ export const pageQuery = graphql`
           slides {
             image {
               childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
+                fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
