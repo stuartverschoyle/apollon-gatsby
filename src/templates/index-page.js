@@ -72,7 +72,7 @@ export const IndexPageTemplate = ({
                 <div className="content columns">
                   <div className="column is-12 is-offset-1">
                     <div className="tile">
-                      <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
+                      <h1 style={{maxWidth: '70%'}} className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
                     <div className="tile">
                       <p>If you have any queries please contact <a href="mailto:info@apollon.org.uk">info@apollon.org.uk</a></p>
