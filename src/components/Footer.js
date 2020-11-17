@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/Apollon_Logo@2x.png'
+import logo from '../img/apollon_logo-green.svg'
 import Karelogo from '../img/kare_logo.svg'
 
 const Footer = class extends React.Component {
