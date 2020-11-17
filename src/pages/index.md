@@ -1,14 +1,11 @@
 ---
 templateKey: 'index-page'
-title: Combining pioneering science with the power of nature
+title: Welcome to Apollon formularies U.K.
 image: /img/Hero_image@2x.png
 mainpitch:
-  title: Who is Apollon
+  title: Currently Under Maintenance
   description: >
-    Apollon’s aims to create a globally recognised brand synonymous with quality, consistency potency on a range of products for a range of conditions within the medical cannabis space.
-
-
-    Apollon is a fully licenced, **fully regulated medical cannabis company** working with full spectrum oils **inclusive of THC**. The companies strategy is to develop medicines for conditions that afflict humans in the modern world.
+    If you have any queries please contact info@apollon.org.uk
   subtitle: Our Strategy
   subdescription: >  
     Through its subsidiaries and affiliates such as **Apollon Formularies Jamaica** (“AFJ”), has developed a suite of proprietary, trade secret, medical cannabis strains, technology, pharmaceutical products and therapeutic applications and AFJ is licensed and approved to cultivate, process, manufacture, perform research and develop, sell and distribute within the legalized hemp and medical cannabis industry in Jamaica.    

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import logo from '../img/Apollon_Logo@2x.png'
+import Karelogo from '../img/kare_logo.svg'
 
 const Footer = class extends React.Component {
   render() {
@@ -11,11 +12,11 @@ const Footer = class extends React.Component {
           <div className="container">
             <div style={{ maxWidth: '100vw' }} className="columns">
               <div className="column is-4">
-                <img src={logo} alt="Kaldi" style={{ width: '14em'}} />
+                <img src={logo} alt="Apollon" style={{ width: '14em'}} />
               </div>
               <div className="column is-8">
                 <section className="menu">
-                  <ul className="menu-list" style={{display:'flex'}}>
+                  {/* <ul className="menu-list" style={{display:'flex'}}>
                     <li>
                       <Link className="navbar-item" to="/about">
                         About
@@ -36,7 +37,7 @@ const Footer = class extends React.Component {
                         Contact Us
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </section>
               </div>
             </div>
@@ -48,7 +49,7 @@ const Footer = class extends React.Component {
               <p>Copyright &copy; 2020 Apollon Formularies Ltd. All rights reserved</p>
             </div>
             <div className="column is-4 has-text-right">
-                <p>test</p>
+                <p style={{display:'inline-flex'}}>&#9889; by&nbsp;<b>Kare</b>&nbsp;<img src={Karelogo} alt="Kare" style={{ height: '1.5em'}} /></p>
             </div> 
           </div>
         </div>

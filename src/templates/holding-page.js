@@ -14,7 +14,7 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AboutPageTemplate = ({
+export const HoldingPageTemplate = ({
   title,
   image,
   mainpitch,
@@ -47,7 +47,6 @@ export const AboutPageTemplate = ({
           flexDirection: 'column',
           maxWidth: '1110px',
           margin: '0 auto',
-          width: 'inherit'
         }}
       >
         <h2 style={{
@@ -62,6 +61,12 @@ export const AboutPageTemplate = ({
         >
           {title}
         </h1>
+        <Link style={{
+          width:'200px',
+          marginTop: '30px'
+        }} className="btn" to="/blog">
+          Learn more
+        </Link>
       </div>
     </div>
     <section className="section section--gradient">
@@ -81,7 +86,13 @@ export const AboutPageTemplate = ({
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                       />                 
-                    </div>                   
+                    </div>
+                    <Link style={{
+                      width:'322px',
+                      marginTop: '30px'
+                    }} className="btn btnInvert" to="/blog">
+                      Learn more about Apollon
+                  </Link>                     
                   </div>
                 </div>
 
@@ -122,16 +133,6 @@ export const AboutPageTemplate = ({
         </div>                
       </div> 
     </section>
-    <section className="section section--gradient highlights">
-      <div className="container">                        
-        <div className="content">
-          <div className="has-text-centered">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
-          </div>                              
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>    
 
     <section className="section section--gradient">
       <div className="container column">                        
@@ -161,11 +162,20 @@ export const AboutPageTemplate = ({
         </div>                
       </div> 
     </section>
-
+    <section className="section section--gradient highlights">
+      <div className="container">                        
+        <div className="content">
+          <div className="has-text-centered">
+              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
+          </div>                              
+          <Features gridItems={intro.blurbs} />
+        </div>
+      </div>
+    </section>
   </div>
 )
 
-AboutPageTemplate.propTypes = {
+HoldingPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -183,12 +193,12 @@ AboutPageTemplate.propTypes = {
   }),    
 }
 
-const AboutPage = ({ data }) => {
+const HoldingPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <HoldingPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -203,7 +213,7 @@ const AboutPage = ({ data }) => {
   )
 }
 
-AboutPage.propTypes = {
+HoldingPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -211,11 +221,11 @@ AboutPage.propTypes = {
   }),
 }
 
-export default AboutPage
+export default HoldingPage
 
 export const pageQuery = graphql`
-  query AboutPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+  query HoldingPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "holding-page" } }) {
       frontmatter {
         title
         image {
