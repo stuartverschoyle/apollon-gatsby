@@ -1,6 +1,6 @@
 ---
 templateKey: 'index-page'
-title: Welcome to Apollon formularies U.K.
+title: Welcome to Apollon Formularies
 image: /img/Hero_image@2x.png
 mainpitch:
   title: Currently Under Maintenance
