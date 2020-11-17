@@ -75,7 +75,7 @@ export const IndexPageTemplate = ({
                       <h1 style={{maxWidth: '70%'}} className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
                     <div className="tile">
-                      <p>If you have any queries please contact <a href="mailto:info@apollon.org.uk">info@apollon.org.uk</a></p>
+                      <p>If you have any queries please contact <a href="mailto:info@apollon.org.uk" style={{color:'#78C67D', fontWeight:'bold'}}>info@apollon.org.uk</a></p>
                     </div>  
                   </div>
                 </div>
