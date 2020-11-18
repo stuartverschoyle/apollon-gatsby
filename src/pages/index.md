@@ -3,7 +3,7 @@ templateKey: 'index-page'
 title: Welcome to Apollon Formularies
 image: /img/Hero_image@2x.png
 mainpitch:
-  title: Currently Under Maintenance
+  title: Site launch in the coming weeks
   description: >
     If you have any queries please contact info@apollon.org.uk
   subtitle: Our Strategy
