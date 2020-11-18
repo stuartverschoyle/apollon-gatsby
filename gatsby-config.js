@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Apollon Formularies U.K',
+    title: 'Apollon Formularies',
     description:
       'Combining pioneering science with the power of nature.',
   },

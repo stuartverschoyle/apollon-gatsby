@@ -39,7 +39,7 @@ mainpitch:
 
 
     Apollon’s R&D License allows drug discovery using THC and other cannabinoids. This allows Apollon to be the rare European listed company conducting human R&D using THC to develop new therapeutics.
-heading: Apollon formularies U.K.
+heading: Apollon Formularies
 featuretitle: Meet the people who make it happen
 intro:
   blurbs:

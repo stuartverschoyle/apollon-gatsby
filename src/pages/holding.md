@@ -12,7 +12,7 @@ mainpitch:
   subtitle: Our Strategy
   subdescription: >  
     Through its subsidiaries and affiliates such as **Apollon Formularies Jamaica** (“AFJ”), has developed a suite of proprietary, trade secret, medical cannabis strains, technology, pharmaceutical products and therapeutic applications and AFJ is licensed and approved to cultivate, process, manufacture, perform research and develop, sell and distribute within the legalized hemp and medical cannabis industry in Jamaica.    
-heading: Apollon formularies U.K.
+heading: Apollon Formularies.
 featuretitle: Investment Highlights
 intro:
   blurbs:
