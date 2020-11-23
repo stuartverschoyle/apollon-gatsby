@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import Carousel from '../components/Carousel'
+import Productcarousel from '../components/ProductCarousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
@@ -64,7 +65,7 @@ export const HoldingPageTemplate = ({
         <Link style={{
           width:'200px',
           marginTop: '30px'
-        }} className="btn" to="/blog">
+        }} className="btn" to="/about">
           Learn more
         </Link>
       </div>
@@ -90,7 +91,7 @@ export const HoldingPageTemplate = ({
                     <Link style={{
                       width:'322px',
                       marginTop: '30px'
-                    }} className="btn btnInvert" to="/blog">
+                    }} className="btn btnInvert" to="/about">
                       Learn more about Apollon
                   </Link>                     
                   </div>
@@ -157,8 +158,8 @@ export const HoldingPageTemplate = ({
     </section>
     <section className="section section--gradient" style={{marginBottom:'70px'}}>
       <div className="columns">
-        <div className="column is-12 ">
-        <Carousel gridItems={products.slides} />             
+        <div className="column is-10 is-offset-1">
+        <Productcarousel gridItems={products.slides} />             
         </div>                
       </div> 
     </section>
@@ -193,7 +194,7 @@ HoldingPageTemplate.propTypes = {
   }),    
 }
 
-const HoldingPage = ({ data }) => {
+const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
@@ -213,7 +214,7 @@ const HoldingPage = ({ data }) => {
   )
 }
 
-HoldingPage.propTypes = {
+IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -221,11 +222,11 @@ HoldingPage.propTypes = {
   }),
 }
 
-export default HoldingPage
+export default IndexPage
 
 export const pageQuery = graphql`
   query HoldingPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "holding-page" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
         image {

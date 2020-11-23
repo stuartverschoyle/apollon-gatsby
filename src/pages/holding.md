@@ -1,9 +1,9 @@
 ---
 templateKey: 'holding-page'
-title: Combining pioneering science with the power of nature 
+title: Welcome to Apollon Formularies 
 image: /img/Hero_image@2x.png
 mainpitch:
-  title: Who is Apollon
+  title: Site launch in the coming weeks
   description: >
     Apollon’s aims to create a globally recognised brand synonymous with quality, consistency potency on a range of products for a range of conditions within the medical cannabis space.
 
