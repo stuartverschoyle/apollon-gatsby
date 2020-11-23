@@ -14,7 +14,7 @@ const Footer = class extends React.Component {
                <div className="column is-3">
                 <img src={logo} alt="Apollon" style={{ width: '14em'}} />
               </div>
-              <div className="column is-3">
+              {/* <div className="column is-3">
                 <Link className="navbar-item" to="/about">
                   About
                 </Link>
@@ -68,7 +68,7 @@ const Footer = class extends React.Component {
                 <Link className="navbar-item" to="/contact">
                 Contact Us
                 </Link>                      
-              </div>                                          
+              </div>                                           */}
             </div>
           </div>
         </div>
