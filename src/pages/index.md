@@ -1,15 +1,21 @@
 ---
 templateKey: 'index-page'
-title: Welcome to Apollon Formularies
+title: Combining pioneering science with the power of nature 
 image: /img/Hero_image@2x.png
 mainpitch:
-  title: Site launch in the coming weeks
+  title: Who is Apollon
   description: >
-    If you have any queries please contact info@apollon.org.uk
+    Apollon’s strategy is to become the proven global medical cannabis company licensed to develop full spectrum formulations based on real life clinical patient data. 
+
+
+    It aims to create a globally recognised brand synonymous with quality, consistency potency on a range of products for a variety of conditions within the medical cannabis space.
   subtitle: Our Strategy
   subdescription: >  
-    Through its subsidiaries and affiliates such as **Apollon Formularies Jamaica** (“AFJ”), has developed a suite of proprietary, trade secret, medical cannabis strains, technology, pharmaceutical products and therapeutic applications and AFJ is licensed and approved to cultivate, process, manufacture, perform research and develop, sell and distribute within the legalized hemp and medical cannabis industry in Jamaica.    
-heading: Apollon Formularies
+    **Our strategy is to become the premiere global medical cannabis company legally licensed to develop successful personalised clinical treatments utilizing artificial intelligence on clinical trial patient data.**
+
+
+    Apollon’s Research & Development Licence allows drug discovery using THC and other cannabinoids. This allows Apollon to be the rare European listed company conducting medically supervised trials using THC to develop new therapeutics.  
+heading: APOLLON FORMULARIES.
 featuretitle: Investment Highlights
 intro:
   blurbs:
@@ -61,31 +67,33 @@ main:
     * Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner
 carousel: 
   slides: 
-    - image: /img/physician.jpg 
+    - image: /img/our_strategy_01@2x.jpg 
       alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
+    - image: /img/our_strategy_02@2x.jpg
       alt: Accurately determine appropriate disease and patient specific formulations
-    - image: /img/physician.jpg
-      alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
-      alt: Accurately determine appropriate disease and patient specific formulations
-    - image: /img/physician.jpg
-      alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
-      alt: Accurately determine appropriate disease and patient specific formulations                  
+    - image: /img/our_strategy_03@2x.jpg
+      alt: Provide quality dose controlled medical cannabis pharmaceutical production
+    - image: /img/our_strategy_04@2x.jpg
+      alt: Provide quality controlled legal growth of medical cannabis strains
+    - image: /img/our_strategy_05@2x.jpg
+      alt: Be capable of providing consistent dosing globally and legally
+    - image: /img/our_strategy_06@2x.jpg
+      alt: Patented formulas to be made available for third party licensing
+    - image: /img/our_strategy_07@2x.jpg 
+      alt: Patented formulations, along with clinically proven data, allows for potential partnerships with ‘Big Pharma’      
+               
 products:
   slides:
-    - image: /img/products_hero@2x.png
+    - image: /img/01_thc-vape@2x.jpg
       alt: Apollon NAUSEA
-    - image: /img/products_01@2x.png
+    - image: /img/02_cbd-thc-oral-spray@2x.jpg
       alt: Apollon APPETITE
-    - image: /img/products_02@2x.png
+    - image: /img/03_cbd-capsules@2x.jpg
       alt: Apollon CANCER
-    - image: /img/products_03@2x.png
+    - image: /img/04_thc-live-resin-gelato@2x.jpg
       alt: Apollon PAIN
-    - image: /img/products_04@2x.png
+    - image: /img/05_cbd-caviar@2x.jpg
       alt: Apollon NAUSEA
-    - image: /img/products_05@2x.png
-      alt: Apollon SEIZURES 
+
 
 ---

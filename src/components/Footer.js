@@ -11,35 +11,64 @@ const Footer = class extends React.Component {
         <div className="content">
           <div className="container">
             <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
+               <div className="column is-3">
                 <img src={logo} alt="Apollon" style={{ width: '14em'}} />
               </div>
-              <div className="column is-8">
-                <section className="menu">
-                  {/* <ul className="menu-list" style={{display:'flex'}}>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/partners">
-                        Partners
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Investor Relations
-                      </Link>
-                    </li>                    
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact Us
-                      </Link>
-                    </li>
-                  </ul> */}
-                </section>
+              <div className="column is-3">
+                <Link className="navbar-item" to="/about">
+                  About
+                </Link>
+                <ul>
+                  <li><Link className="navbar-item" to="/about">About Apollon</Link></li>
+                  <li><Link className="navbar-item" to="/about/our-team">Our Team</Link></li>
+                  <li><Link className="navbar-item" to="/about/understanding-cannabis">Understanding cannabis</Link></li>
+                </ul>
+                <Link className="navbar-item" to="/operations">
+                  Operations
+                </Link>        
+                <ul>
+                  <li><Link className="navbar-item" to="/operations/docs-place-international">Doc's Place International</Link></li>
+                  <li><Link className="navbar-item" to="/operations/medicall-supervised-trials">Medically supervised trials</Link></li>
+                  <li><Link className="navbar-item" to="/operations/artificial-intelligence">Artificial intelligence</Link></li>
+                </ul>                              
               </div>
+              <div className="column is-3">
+                <Link className="navbar-item" to="/products">
+                Products
+                </Link>
+                <ul>
+                  <li><Link className="navbar-item" to="/products/trademarked-products">Trademarked Products</Link></li>
+                  <li><Link className="navbar-item" to="/products/3d-printer">3D Printer</Link></li>
+                  <li><Link className="navbar-item" to="/products/cultivation-processing-and-extraction">Cultivation, processing &amp; extraction</Link></li>
+                </ul>                 
+                <Link className="navbar-item" to="/regulation">
+                Regulation
+                </Link>
+                <ul>
+                  <li><Link className="navbar-item" to="/regulation/apollon-licences">Apollon Licences</Link></li>
+                  <li><Link className="navbar-item" to="/regulation/jamaican-regulatory-environment">Jamaican regulatory environment</Link></li>
+                  <li><Link className="navbar-item" to="/regulation/uk-regulation">UK regulation</Link></li>
+                  <li><Link className="navbar-item" to="/regulation/global-regulation">Global regulation</Link></li>
+                </ul>                   
+              </div>
+              <div className="column is-3">
+                <Link className="navbar-item" to="/investor-relations">
+                Investor Relations
+                </Link>
+                <ul>
+                  <li><Link className="navbar-item" to="/investor-relations/">Investor Relations</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/share-price-information">Share Prince Information</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/shareholder-information">Shareholder Information</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/presentations-and-reports">Presentations &amp; Reports</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/news-and-media">News &amp; Media</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/regulatory-news">Regulatory News</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/aqse-rule-71">AQSE Rule 71</Link></li>
+                  <li><Link className="navbar-item" to="/investor-relations/advisers">Advisers</Link></li>
+                </ul>                   
+                <Link className="navbar-item" to="/contact">
+                Contact Us
+                </Link>                      
+              </div>                                          
             </div>
           </div>
         </div>
@@ -49,7 +78,7 @@ const Footer = class extends React.Component {
               <p>Copyright &copy; 2020 Apollon Formularies Ltd. All rights reserved</p>
             </div>
             <div className="column is-4 has-text-right">
-                <p style={{display:'inline-flex'}}>&#9889; by&nbsp;<b>Kare</b>&nbsp;<img src={Karelogo} alt="Kare" style={{ height: '1.5em'}} /></p>
+                <p style={{display:'inline-flex'}}><span role="img" aria-label="powered">&#9889;</span> by&nbsp;<b>Kare</b>&nbsp;<img src={Karelogo} alt="Kare" style={{ height: '1.5em'}} /></p>
             </div> 
           </div>
         </div>

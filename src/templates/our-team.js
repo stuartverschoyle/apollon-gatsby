@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Carousel from '../components/Carousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
@@ -13,17 +12,10 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AboutPageTemplate = ({
+export const OurTeamPageTemplate = ({
   title,
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
-  carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -69,7 +61,8 @@ export const AboutPageTemplate = ({
             <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-8 is-offset-2">
+                  <div className="column is-10 is-offset-1">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
@@ -109,26 +102,14 @@ export const AboutPageTemplate = ({
           </div>
         </div>
       </div>
-    </section>    
-    <section className="section section--gradient" style={{marginBottom:'70px'}}>
-      <div className="columns">
-        <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides} />
-        </div>                
-      </div> 
-    </section>  
+    </section>     
   </div>
 )
 
-AboutPageTemplate.propTypes = {
+OurTeamPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
   mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  carousel: PropTypes.shape({
-    slides: PropTypes.array,
-  })  
 }
 
 const AboutPage = ({ data }) => {
@@ -136,13 +117,10 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <OurTeamPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        carousel={frontmatter.carousel}
       />
     </Layout>
   )
@@ -159,8 +137,8 @@ AboutPage.propTypes = {
 export default AboutPage
 
 export const pageQuery = graphql`
-  query AboutPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+  query OurTeamPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "our-team" } }) {
       frontmatter {
         title
         image {
@@ -175,20 +153,6 @@ export const pageQuery = graphql`
           description
           subtitle
           subdescription          
-        }
-        heading
-        featuretitle
-        carousel {
-          slides {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-          }
         }                       
       }
     }

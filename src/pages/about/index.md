@@ -1,38 +1,44 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About us
-image: /img/Hero_image@2x.png
+title: About Apollon
+image: /img/about-apollon_hero-image_01@2x.jpg 
 mainpitch:
   title: Who is Apollon 
   description: >
     Apollon’s strategy is to become the proven global medical cannabis company licenced to develop full spectrum formulations based on real life clinical patient data.
 
 
-    It aims to create a globally recognised brand synonymous with quality, consistency potency on a range of products for a range of conditions within the medical cannabis space.
+    It aims to create a globally recognised brand synonymous with quality, consistent potency on a range of products for a variety of conditions within the medical cannabis space.
 
 
-    Apollon is a fully licenced, fully regulated medical cannabis company working with full spectrum oils inclusive of THC. The company plans, using its own formulations, to develop medicines for conditions that afflict humans in the modern world.
+    Apollon is a fully licensed, fully regulated medical cannabis company working with full spectrum oils inclusive of THC. The company plans, using its own formulations, to develop medicines for conditions that afflict humans in the modern world.
 
 
-    Apollon Formularies Ltd (UK) will through its subsidiary Apollon Formularies Jamaica Ltd (a fully licenced full spectrum medical cannabis company), develop, market, distribute and sell full spectrum (inclusive of THC) products in the legal hemp and medical cannabis industry.  It is currently producing pharmaceutical, neutraceutical and other medical cannabis related products, including 3D printed sublingual, suppositories and capsules. Apollon Formularies UK Ltd. was established to advance the current significant commercial opportunities in the legal medical cannabis markets globally.
+    Apollon Formularies will through its subsidiary Apollon Formularies Jamaica Ltd (a fully licensed full spectrum medical cannabis company), develop, market, distribute and sell full spectrum (inclusive of THC) products in the legal hemp and medical cannabis industry.  It is currently producing pharmaceutical, neutraceutical and other medical cannabis related products, including 3D printed sublingual, suppositories and capsules. Apollon Formularies was established to advance the current significant commercial opportunities in the legal medical cannabis markets globally.
 
 
-    Apollon Formularies Jamaica Limited (“AFJ”) is licensed to operate at the Federal level in Jamaica and hold the following licenses and approvals:  
+    Apollon Formularies Jamaica Limited (“AFJ”) is licensed to operate at the Federal level in Jamaica and hold the following licences and approvals:  
 
-    * Cultivation
 
-    * Processing and extraction License
+    * Human Research & Development
 
-    * Retail (Therapeutic)   
+    * Cultivate cannabis (“Tier 1”)
 
-    * Research and Development
+    * Retail dispensary license  
+
+    * Retail Therapeutic Distribution
     
-    * Conditional Transportation.     
-
-
-    Together these licences create a vertically integrated FULL SPECTRUM (inclusive of THC) medical cannabis company both in Jamaica and to the international market via legal export from Jamaica to countries where the law allows import of medical cannabis products.
+    * Tier 2 Extraction processing facility for 200 sq./m
     
+    * “Tier 3” Conditional Cultivation approval expected Q1 2020
+
+    * Conditional transport approval 
+
+
+    Together these licences create a vertically integrated full spectrum (inclusive of THC) medical cannabis company both in Jamaica and to the international market via legal export from Jamaica to countries where the law allows import of medical cannabis products.
+
+  image: /img/about-graph.svg
   subtitle: Our Strategy
   subdescription: >  
     **Our strategy is to become the premiere global medical cannabis company legally licensed to develop successful personalised clinical treatments utilizing artificial intelligence on clinical trial patient data.**
@@ -68,54 +74,21 @@ intro:
       header: Stong global recognition
       text: |
         of Jamaican growers and brands             
-main:
-  heading: Trade Mark Products
-  description: >
-    **Apollon** has created and obtained proprietary hybrid medical cannabis pharmaceutical strains, technology, formulations, and treatment products.
-
-
-    Many of these formulations were created using Apollon’s proprietary artificial intelligence techniques and include:
-
-    * Apollon NAUSEA™
-
-    * Apollon PAIN™
-
-    * Apollon SLEEP™
-
-    * Apollon ANTI-INFLAMMATORY™
-
-    * Apollon SEIZURES™
-
-    * Apollon APPETITE™
-    
-    * Apollon CANCER™ (APM™) – High Times Cannabis Cup 1 st Place Winner
 carousel: 
   slides: 
-    - image: /img/physician.jpg 
+    - image: /img/our_strategy_01@2x.jpg 
       alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
+    - image: /img/our_strategy_02@2x.jpg
       alt: Accurately determine appropriate disease and patient specific formulations
-    - image: /img/physician.jpg
-      alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
-      alt: Accurately determine appropriate disease and patient specific formulations
-    - image: /img/physician.jpg
-      alt: Provide physician supervised clinical trials for patient outcomes validation
-    - image: /img/oil.jpg
-      alt: Accurately determine appropriate disease and patient specific formulations                  
-products:
-  slides:
-    - image: /img/products_hero@2x.png
-      alt: Apollon NAUSEA
-    - image: /img/products_01@2x.png
-      alt: Apollon APPETITE
-    - image: /img/products_02@2x.png
-      alt: Apollon CANCER
-    - image: /img/products_03@2x.png
-      alt: Apollon PAIN
-    - image: /img/products_04@2x.png
-      alt: Apollon NAUSEA
-    - image: /img/products_05@2x.png
-      alt: Apollon SEIZURES 
+    - image: /img/our_strategy_03@2x.jpg
+      alt: Provide quality dose controlled medical cannabis pharmaceutical production
+    - image: /img/our_strategy_04@2x.jpg
+      alt: Provide quality controlled legal growth of medical cannabis strains
+    - image: /img/our_strategy_05@2x.jpg
+      alt: Be capable of providing consistent dosing globally and legally
+    - image: /img/our_strategy_06@2x.jpg
+      alt: Patented formulas to be made available for third party licensing
+    - image: /img/our_strategy_07@2x.jpg 
+      alt: Patented formulations, along with clinically proven data, allows for potential partnerships with ‘Big Pharma’                  
 
 ---

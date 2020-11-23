@@ -8,17 +8,17 @@ import './../templates/slick/slick-theme.css'
 
 const settings = {
   arrows: true,
-  dots: false,
+  dots: true,
   infinite: true,
   autoplay: false,
-  slidesToShow: 2,
+  slidesToShow: 5,
   slidesToScroll: 1 ,
 }
 
 const FeatureGrid = ({ gridItems }) => (
-  <Slider {...settings} className="overflow-hidden carousel">
+  <Slider {...settings} className="overflow-hidden carousel product-carousel">
     {gridItems.map((item, key) => (
-      <div key={key} className="has-padding-right-twenty carousel-large">
+      <div key={key} className="has-padding-right-twenty">
       <PreviewCompatibleImage imageInfo={item} />
       <p><span>{key + 1} / </span>{item.alt}</p>
       </div>

@@ -63,7 +63,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
-          families: ["hk_groteskbold"],
+          families: ["hk_groteskbold", "hk_groteskregular"],
           urls: ["/fonts/fonts.css"],
         },
       },

@@ -27,12 +27,12 @@
   font-size: 20px;
   line-height: 60px;
   position: absolute;
-  bottom: 40px;
-  background: #fff;
+  bottom: -34px;
+  background: #78C67D;
   border: 0px;
   z-index: 1;
   outline: none;
-  color:transparent;
+  color:#fff;
 }
 
 .slick-prev{
@@ -42,9 +42,9 @@
 
 .slick-prev:after {
     content: '/';
-    background: #fff;
+    background: #78C67D;
     position: absolute;
-    color: #9B9B9B;
+    color: #fff;
     display: inline-block;
     top: 0;
     right: 0px;
@@ -82,7 +82,7 @@
     line-height: 1;
 
     opacity: .75;
-    color: #4A4A4A;
+    color: #fff;
     ;
 
     -webkit-font-smoothing: antialiased;
