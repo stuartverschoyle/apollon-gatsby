@@ -16,7 +16,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         mainpitch={data.mainpitch.title || data.mainpitch.description || data.mainpitch.subtitle || data.mainpitch.subdescription}
         main={data.main || {}}
         carousel={data.carousel || { slides: [] }}
-        products={data.products || { slides: [] }}
       />
     )
   } else {

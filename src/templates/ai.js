@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Carousel from '../components/Carousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
@@ -13,17 +12,10 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AboutPageTemplate = ({
+export const AIPageTemplate = ({
   title,
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
-  carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -50,7 +42,7 @@ export const AboutPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/about">ABOUT &gt;</Link><Link to="/about">ABOUT US</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/operations/docs-place-international">OPERATIONS &gt;</Link><Link to="/operations/artificial-intelligence">ARTIFICIAL INTELLIGENCE</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -67,88 +59,63 @@ export const AboutPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-12">
-              <div className="content">
+            <div className="content">
                 <div className="content columns">
                   <div className="column is-8 is-offset-2">
+                    <h2 style={{textAlign:"center", color:"#78C67D", fontSize:"24px", marginBottom:"40px"}}>{mainpitch.title}</h2>
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                       />
                     </div>
-                    <img src="/img/about-graph.svg" style={{width: '100%', height:"auto"}} alt="" />
-                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-12">
-            <div className="content">
-              <div className="content columns">
-                <div className="column is-3 is-offset-1">
-                  <div className="tile">
-                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
-                  </div>
-                </div>
-                <div className="column is-6 is-offset-1">
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
-                    />                    
                   </div>
                 </div>
               </div>
+              <div className="content">
+                <div className="content columns">
+                  <div className="column is-6 is-offset-3">
+                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
+                  </div>
+                </div>
+              </div> 
+              <div className="content">
+                <div className="content columns">
+                  <div className="column is-8 is-offset-2">
+                    <p>{mainpitch.footnote}</p>
+                  </div>
+                </div>
+              </div>                                      
             </div>
           </div>
         </div>
       </div>
     </section>    
-    <section className="section section--gradient" style={{marginBottom:'70px'}}>
-      <div className="columns">
-        <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides} />
-        </div>                
-      </div> 
-    </section>  
   </div>
 )
 
-AboutPageTemplate.propTypes = {
+AIPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  carousel: PropTypes.shape({
-    slides: PropTypes.array,
-  })  
+  mainpitch: PropTypes.object, 
 }
 
-const AboutPage = ({ data }) => {
+const AIInternationalPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <AIPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        carousel={frontmatter.carousel}
       />
     </Layout>
   )
 }
 
-AboutPage.propTypes = {
+AIInternationalPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -156,11 +123,11 @@ AboutPage.propTypes = {
   }),
 }
 
-export default AboutPage
+export default AIInternationalPage
 
 export const pageQuery = graphql`
-  query AboutPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+  query AIPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "ai" } }) {
       frontmatter {
         title
         image {
@@ -173,23 +140,16 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
-          subtitle
-          subdescription          
-        }
-        heading
-        featuretitle
-        carousel {
-          slides {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
-            alt
           }
-        }                       
+          footnote
+        }
+        heading                      
       }
     }
   }

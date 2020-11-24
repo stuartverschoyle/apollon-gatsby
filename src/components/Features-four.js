@@ -12,7 +12,7 @@ const toHTML = value => remark()
 const FeatureGrid = ({ gridItems }) => (
   <div className="columns is-multiline">
     {gridItems.map((item) => (
-      <div key={item.text} className="column is-4">
+      <div key={item.text} className="column is-3 space-between">
         <section className="section">
           <div className="has-text-centered">
             <div
@@ -25,10 +25,11 @@ const FeatureGrid = ({ gridItems }) => (
               <PreviewCompatibleImage imageInfo={item} /> 
             </div>
           </div>
-          <h3 style={{fontSize:'20px', textTransform:'uppercase', marginTop:'10px'}}>{item.header}</h3>
-          <p style={{fontSize:'20px'}}>{item.text}</p>
-          <div dangerouslySetInnerHTML={{ __html: toHTML(item.description)}}/>                                          
+          <h3 style={{fontSize:'20px', textTransform:'uppercase', marginTop:'10px', fontFamily:"hk_groteskbold"}}>{item.header}</h3>
+          <p style={{fontSize:'16px', color:"#545454", fontFamily:"hk_groteskbold"}}>{item.text}</p>
+          <div dangerouslySetInnerHTML={{ __html: toHTML(item.description)}}/>
         </section>
+        <button className="btn btnInvert">READ MORE</button>                                          
       </div>
     ))}
   </div>

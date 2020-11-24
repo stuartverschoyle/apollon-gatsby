@@ -62,6 +62,7 @@ $size-3: 33px;
     font-size: 18px;
     font-size: 1rem;
     line-height: 1.8;
+    border:0;
     border-radius: .25rem;
     text-decoration: none;
     font-weight: 700;
@@ -174,11 +175,14 @@ $menu-label-color: $white-ter;
 body 
 {  line-height: 24px}
 
-.section 
-{  padding: 3rem 0.75rem;}
+.section {  
+  padding: 1rem 0.75rem 3rem 0.75rem;
+  p{
+    padding:0;
+  }
+}
 
-.highlights
-  .section
+.highlights .section
 {      padding-top: 0;
       padding-bottom: 0;
 }
@@ -223,7 +227,6 @@ h1, h2
 
 +mobile
   .carousel {margin-left: 0.75rem!important;}
-  .section {padding: 1rem 0.75rem;}
   .menu {font-size: 0.8rem;}
   .blog-list-item header {display: block;}
   .blog-list-item .featured-thumbnail {
@@ -279,10 +282,14 @@ h1 {
     justify-content: flex-end;
 }
 
-.content .tile ul 
- {   margin-left: 40px;
-    margin-top: 0;
-    justify-content: flex-end;
+.tile {
+  padding-bottom: 40px;
+}
+
+.content .tile ul {
+  margin-left: 20px;
+  margin-top: 0;
+  justify-content: flex-end;
 }
 .has-text-right
 {  text-align: right!important
@@ -296,10 +303,14 @@ h1 {
 .has-padding-right-twenty 
 {  padding-right: 20px!important  
 }
-.carousel
-  span 
-{    color: $primary
-}  p
+.carousel span {
+   color: $primary;
+}  
+.product-carousel span {
+  font-size:16px;
+  font-family: hk_groteskbold;
+}
+p
  {   padding: 10px 0
 }
 .productlist ul
@@ -327,12 +338,15 @@ h1 {
     font-size: 20px!important;
     line-height: 60px!important;
     position: absolute!important;
-    bottom: 40px!important;
+    bottom: 80px!important;
     background: #fff!important;
     border: 0px!important;
     z-index: 1!important;
     outline: none!important;
     color:transparent!important;
+    &:before {
+      color:#666!important;
+    }
 }
 
 .breadcrumb a {
@@ -342,5 +356,94 @@ h1 {
   &:hover{
     color:#fff;
     text-decoration: underline;
+  }
+}
+
+.no-padding {
+  padding: 0!important
+}
+
+.no-side-padding {
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+.space-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  button {
+    width: 168px;
+    margin: 0 10px;
+  }
+}
+
+.list-icon ul {
+  list-style-type: none;
+  li{
+    position:relative;
+    margin-bottom:20px;
+    margin-left:10px;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      background-size: 16px;
+      background-image: url('/img/apollon-beacon.png');
+      background-repeat: no-repeat;
+      position:absolute;
+      left:-25px;
+      top:5px;    
+    }
+  }
+}
+
+.image-table{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.product-carousel {
+  .slick-prev {
+    left: -10px;
+    width: 70px;
+    &:after {
+      background:#fff;
+      color:#666;
+    }
+  } 
+  .slick-next {
+    left: 50px!important;
+    width: 70px;
+  }   
+  .slick-track
+  {
+      position: relative;
+      top: 0;
+      left: -90px;
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .slick-dots {
+    left:0;
+  }
+  .slick-list {
+    margin: 0 -10px;
+    padding: 0 0 0 20%;
+  }
+
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+}
+
+.content.withlist ul{
+  margin-left: 35px;
+  li {
+    margin-bottom:10px;
   }
 }

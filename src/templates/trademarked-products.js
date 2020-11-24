@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Carousel from '../components/Carousel'
+import Productcarousel from '../components/ProductCarousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
@@ -13,15 +13,10 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AboutPageTemplate = ({
+export const TradeMarkedProductsPageTemplate = ({
   title,
   image,
-  mainpitch,
-  heading, 
-  featuretitle,
-  intro,
   main, 
-  carousel, 
   products, 
 
 }) => (
@@ -50,7 +45,7 @@ export const AboutPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/about">ABOUT &gt;</Link><Link to="/about">ABOUT US</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/products/trademarked-products">PRODUCTS &gt;</Link><Link to="/products/trademarked-products">TRADEMARKED PRODUCTS</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -68,87 +63,64 @@ export const AboutPageTemplate = ({
           <div className="columns">
             <div className="column is-12">
               <div className="content">
-                <div className="content columns">
+                <div className="content withlist columns">
                   <div className="column is-8 is-offset-2">
-                    <div className="tile">
-                      <div
-                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                      />
+                    <div
+                      dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
                     </div>
-                    <img src="/img/about-graph.svg" style={{width: '100%', height:"auto"}} alt="" />
-                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-12">
-            <div className="content">
-              <div className="content columns">
-                <div className="column is-3 is-offset-1">
-                  <div className="tile">
-                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
-                  </div>
-                </div>
-                <div className="column is-6 is-offset-1">
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
-                    />                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>    
     <section className="section section--gradient" style={{marginBottom:'70px'}}>
       <div className="columns">
-        <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides} />
+        <div className="column is-10 is-offset-2">
+        <Productcarousel gridItems={products.slides} />             
         </div>                
       </div> 
-    </section>  
+    </section>    
+ 
   </div>
 )
 
-AboutPageTemplate.propTypes = {
+TradeMarkedProductsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   mainpitch: PropTypes.object,
   featuretitle: PropTypes.string,
-  carousel: PropTypes.shape({
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
+  main: PropTypes.object,
+  products: PropTypes.shape({
     slides: PropTypes.array,
-  })  
+  }),  
 }
 
-const AboutPage = ({ data }) => {
+const TradeMarkedProductsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <TradeMarkedProductsPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         featuretitle = {frontmatter.featuretitle}
-        carousel={frontmatter.carousel}
+        intro={frontmatter.intro}
+        main={frontmatter.main}
+        products={frontmatter.products}
       />
     </Layout>
   )
 }
 
-AboutPage.propTypes = {
+TradeMarkedProductsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -156,11 +128,11 @@ AboutPage.propTypes = {
   }),
 }
 
-export default AboutPage
+export default TradeMarkedProductsPage
 
 export const pageQuery = graphql`
-  query AboutPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+  query TradeMarkedProductsPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "trademarked-products" } }) {
       frontmatter {
         title
         image {
@@ -178,18 +150,23 @@ export const pageQuery = graphql`
         }
         heading
         featuretitle
-        carousel {
+        main {
+          heading
+          description                                                                                                 
+        }
+        products {
           slides {
             image {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 356, quality: 64) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
             alt
+            description
           }
-        }                       
+        }                     
       }
     }
   }

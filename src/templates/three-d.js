@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Carousel from '../components/Carousel'
 
 import remark from 'remark'
 import remarkHTML from 'remark-html'
@@ -13,17 +12,10 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AboutPageTemplate = ({
+export const ThreeDPageTemplate = ({
   title,
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
-  carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -50,7 +42,7 @@ export const AboutPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/about">ABOUT &gt;</Link><Link to="/about">ABOUT US</Link>
+          <Link to="/">HOME &gt;</Link><Link to="/products/trademarked-products">PRODUCTS &gt;</Link><Link to="/products/3d-printer">3D PRINTER</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -67,42 +59,24 @@ export const AboutPageTemplate = ({
         <div className="section">
           <div className="columns">
             <div className="column is-12">
-              <div className="content">
+            <div className="content">
                 <div className="content columns">
-                  <div className="column is-8 is-offset-2">
+                  <div className="column is-5 is-offset-1">
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                       />
                     </div>
-                    <img src="/img/about-graph.svg" style={{width: '100%', height:"auto"}} alt="" />
-                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div className="tile content">
+                      <div
+                        className="list-icon"
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
+                      />                      
+                    </div>
                   </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-12">
-            <div className="content">
-              <div className="content columns">
-                <div className="column is-3 is-offset-1">
-                  <div className="tile">
-                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
-                  </div>
-                </div>
-                <div className="column is-6 is-offset-1">
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
-                    />                    
-                  </div>
+                  <div className="column is-4 is-offset-1">
+                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
+                  </div>                  
                 </div>
               </div>
             </div>
@@ -110,45 +84,32 @@ export const AboutPageTemplate = ({
         </div>
       </div>
     </section>    
-    <section className="section section--gradient" style={{marginBottom:'70px'}}>
-      <div className="columns">
-        <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides} />
-        </div>                
-      </div> 
-    </section>  
   </div>
 )
 
-AboutPageTemplate.propTypes = {
+ThreeDPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  carousel: PropTypes.shape({
-    slides: PropTypes.array,
-  })  
+  mainpitch: PropTypes.object, 
 }
 
-const AboutPage = ({ data }) => {
+const ThreeDPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <ThreeDPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        carousel={frontmatter.carousel}
       />
     </Layout>
   )
 }
 
-AboutPage.propTypes = {
+ThreeDPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -156,11 +117,11 @@ AboutPage.propTypes = {
   }),
 }
 
-export default AboutPage
+export default ThreeDPage
 
 export const pageQuery = graphql`
-  query AboutPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+  query ThreeDPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "three-d" } }) {
       frontmatter {
         title
         image {
@@ -173,23 +134,16 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
-          subtitle
-          subdescription          
-        }
-        heading
-        featuretitle
-        carousel {
-          slides {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
-            alt
           }
-        }                       
+          list
+        }
+        heading                      
       }
     }
   }

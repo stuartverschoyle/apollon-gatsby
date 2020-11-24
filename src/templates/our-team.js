@@ -1,21 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import Featuresthree from '../components/Features-three'
+import Featuresfour from '../components/Features-four'
 
 import Layout from '../components/Layout'
-
-import remark from 'remark'
-import remarkHTML from 'remark-html'
-
-const toHTML = value => remark()
-                            .use(remarkHTML)
-                            .processSync(value)
-                            .toString()
-                             
+                          
 export const OurTeamPageTemplate = ({
   title,
   image,
   mainpitch,
+  intro
 }) => (
   <div>
     <div
@@ -42,7 +37,7 @@ export const OurTeamPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME ></Link><Link to="/about">ABOUT ></Link><Link to="/about">ABOUT US</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/about">ABOUT &gt;</Link><Link to="/our-team">OUR TEAM</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -61,18 +56,11 @@ export const OurTeamPageTemplate = ({
             <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-10 is-offset-1">
+                  <div className="column is-10 is-offset-1">                
                     <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
-                    <div className="tile">
-                      <div
-                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                      />
-                    </div>
-                    <img src="/img/about-graph.svg" style={{width: '100%', height:"458px"}} alt="" />
-                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                   </div>
                 </div>
-
+                <Featuresthree gridItems={intro.blurbs} />             
               </div>
             </div>
           </div>
@@ -85,19 +73,13 @@ export const OurTeamPageTemplate = ({
           <div className="column is-12">
             <div className="content">
               <div className="content columns">
-                <div className="column is-3 is-offset-1">
+                <div className="column is-10 is-offset-1">
                   <div className="tile">
                     <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
                   </div>
                 </div>
-                <div className="column is-6 is-offset-1">
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
-                    />                    
-                  </div>
-                </div>
               </div>
+              <Featuresfour gridItems={intro.advisory} /> 
             </div>
           </div>
         </div>
@@ -110,9 +92,13 @@ OurTeamPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   mainpitch: PropTypes.object,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+    advisory: PropTypes.array,
+  }),
 }
 
-const AboutPage = ({ data }) => {
+const OurTeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
@@ -121,12 +107,13 @@ const AboutPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         mainpitch={frontmatter.mainpitch}
+        intro={frontmatter.intro}
       />
     </Layout>
   )
 }
 
-AboutPage.propTypes = {
+OurTeamPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -134,7 +121,7 @@ AboutPage.propTypes = {
   }),
 }
 
-export default AboutPage
+export default OurTeamPage
 
 export const pageQuery = graphql`
   query OurTeamPageTemplate {
@@ -150,10 +137,34 @@ export const pageQuery = graphql`
         }
         mainpitch {
           title
-          description
           subtitle
-          subdescription          
-        }                       
+        }
+        intro {
+          advisory {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 356, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }            
+            header
+            text
+            description 
+          }
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 356, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            header
+            text
+            description 
+          }                    
+        }                               
       }
     }
   }

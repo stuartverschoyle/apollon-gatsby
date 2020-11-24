@@ -10,7 +10,8 @@ const OurTeamPreview = ({ entry, getAsset }) => {
       <OurTeamPageTemplate
         image={getAsset(data.image)}
         title={data.title}
-        mainpitch={data.mainpitch.title || data.mainpitch.description || data.mainpitch.image || data.mainpitch.subtitle || data.mainpitch.subdescription}
+        mainpitch={data.mainpitch.title || data.mainpitch.image || data.mainpitch.subtitle || data.mainpitch.subdescription}
+        intro={data.intro || { blurbs: [] } || { advisory: [] }}
       />
     )
   } else {

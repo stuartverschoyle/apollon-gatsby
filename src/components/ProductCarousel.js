@@ -11,16 +11,43 @@ const settings = {
   dots: true,
   infinite: true,
   autoplay: false,
-  slidesToShow: 5,
-  slidesToScroll: 1 ,
+  slidesToShow: 4.5,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4.5,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]  
 }
 
 const FeatureGrid = ({ gridItems }) => (
   <Slider {...settings} className="overflow-hidden carousel product-carousel">
     {gridItems.map((item, key) => (
-      <div key={key} className="has-padding-right-twenty">
+      <div key={key}>
       <PreviewCompatibleImage imageInfo={item} />
-      <p><span>{key + 1} / </span>{item.alt}</p>
+      <p><span>{item.alt}</span></p>
+      <p>{item.description}</p>
       </div>
 
     ))}
