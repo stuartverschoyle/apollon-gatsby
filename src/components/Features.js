@@ -25,8 +25,8 @@ const FeatureGrid = ({ gridItems }) => (
               <PreviewCompatibleImage imageInfo={item} /> 
             </div>
           </div>
-          <h3 style={{fontSize:'20px', textTransform:'uppercase', marginTop:'10px'}}>{item.header}</h3>
-          <p style={{fontSize:'20px'}}>{item.text}</p>
+          <h3 style={{fontSize:'18px', textTransform:'uppercase', marginTop:'10px', marginBottom:'5px'}}>{item.header}</h3>
+          <p style={{fontSize:'18px'}}>{item.text}</p>
           <div dangerouslySetInnerHTML={{ __html: toHTML(item.description)}}/>                                          
         </section>
       </div>

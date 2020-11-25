@@ -12,7 +12,7 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const ThreeDPageTemplate = ({
+export const ApollonLicencesPageTemplate = ({
   title,
   image,
   mainpitch,
@@ -42,7 +42,7 @@ export const ThreeDPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-          <Link to="/">HOME &gt;</Link><Link to="/products/trademarked-products">PRODUCTS &gt;</Link><Link to="/products/3d-printer">3D PRINTER</Link>
+          <Link to="/">HOME &gt;</Link><Link to="/regulation/apollon-licences">REGULATION &gt;</Link><Link to="/regulation/apollon-licences">APOLLON LICENCES</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -61,7 +61,7 @@ export const ThreeDPageTemplate = ({
             <div className="column is-12">
             <div className="content">
                 <div className="content columns">
-                  <div className="column is-5 is-offset-1">
+                  <div className="column is-8 is-offset-2">
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
@@ -69,14 +69,11 @@ export const ThreeDPageTemplate = ({
                     </div>
                     <div className="tile content">
                       <div
-                        className="list-icon"
+                        className="list-icon two-col"
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
                       />                      
                     </div>
-                  </div>
-                  <div className="column is-4 is-offset-1">
-                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
-                  </div>                  
+                  </div>                
                 </div>
               </div>
             </div>
@@ -87,19 +84,19 @@ export const ThreeDPageTemplate = ({
   </div>
 )
 
-ThreeDPageTemplate.propTypes = {
+ApollonLicencesPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   mainpitch: PropTypes.object, 
 }
 
-const ThreeDPage = ({ data }) => {
+const ApollonLicencesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <ThreeDPageTemplate
+      <ApollonLicencesPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -109,7 +106,7 @@ const ThreeDPage = ({ data }) => {
   )
 }
 
-ThreeDPage.propTypes = {
+ApollonLicencesPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -117,11 +114,11 @@ ThreeDPage.propTypes = {
   }),
 }
 
-export default ThreeDPage
+export default ApollonLicencesPage
 
 export const pageQuery = graphql`
-  query ThreeDPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "three-d" } }) {
+  query ApollonLicencesPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "apollon-licences" } }) {
       frontmatter {
         title
         image {
@@ -134,13 +131,6 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }          
           list
         }
         heading                      

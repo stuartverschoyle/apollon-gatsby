@@ -16,6 +16,13 @@ $size-3: 33px;
 .navbar .navbar-menu {
   box-shadow:none !important
 }
+.green-border {
+  border:1px solid $apollon-green;
+}
+
+.pdf-container {
+  padding: 40px 0!important;
+}
 
 .content .taglist{
   list-style: none;
@@ -119,6 +126,10 @@ footer.footer
   }  
 }
 
+.highlights h3 {
+  font-family: hk_groteskbold;
+}
+
 .footer .content ul{
   list-style: none;
   li {
@@ -173,7 +184,10 @@ $menu-label-color: $white-ter;
 
 @import "~bulma";
 body 
-{  line-height: 24px}
+{  
+  line-height: 24px;
+  font-family: hk_groteskregular;
+}
 
 .section {  
   padding: 1rem 0.75rem 3rem 0.75rem;
@@ -290,6 +304,9 @@ h1 {
   margin-left: 20px;
   margin-top: 0;
   justify-content: flex-end;
+  li {
+    margin-bottom: 10px;
+  }
 }
 .has-text-right
 {  text-align: right!important
@@ -376,6 +393,10 @@ p
     width: 168px;
     margin: 0 10px;
   }
+}
+
+.list-icon.two-col {
+  columns: 2;
 }
 
 .list-icon ul {
