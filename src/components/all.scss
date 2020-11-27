@@ -1,5 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables";
-
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
 // Config vars
 // Apollon
 $apollon-green: #6EC489;
@@ -23,6 +23,44 @@ $size-3: 33px;
 .pdf-container {
   padding: 40px 0!important;
 }
+
+.vidbtn {
+  position:absolute;
+  z-index:2;
+  left:0;
+  right:0;
+  top:50%;
+  margin:-30px auto;
+  border:0;
+  outline:none;
+  background:none;
+  background-image:url('/img/play_button.svg');
+  width: 60px;
+  height:60px;
+}
+
+.content .news {
+  h1 {
+    color: $apollon-green;
+    font-size: 24px;
+    margin-top: 40px!important;
+    &:after {
+      background:none;
+    } 
+  }
+  a {
+    color: $apollon-green;
+    text-decoration: underline;
+  }
+  table {
+    th {
+      background: $apollon-green;
+      color:#fff;
+    }
+  }
+
+}
+
 
 .content .taglist{
   list-style: none;

@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Pdf from '../components/Pdf'
-                         
-export const InvestorRelationsPageTemplate = ({
+import remark from 'remark'
+import remarkHTML from 'remark-html'
+
+const toHTML = value => remark()
+                            .use(remarkHTML)
+                            .processSync(value)
+                            .toString()
+
+export const AQSERule71Template = ({
   title,
   image,
-  featuretitle,
-  intro,
-  pdf
+  mainpitch
 }) => (
   <div>
     <div
@@ -38,7 +41,7 @@ export const InvestorRelationsPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS &gt;</Link><Link to="/investor-relations/aqse-rule-71">AQSE RULE 71</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -54,30 +57,19 @@ export const InvestorRelationsPageTemplate = ({
       <div className="container over-hero">                        
         <div className="content">
           <div className="content columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">{featuretitle}</h1>
-            </div>
-          </div>
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient highlights">
-      <div className="container">                        
-        <div className="content">
-          <div className="content columns">
-            <div className="column is-8 is-offset-2">
-              <Pdf gridItems={pdf.downloads} />
+            <div className="column is-8 is-offset-2 news">
+            <div dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}} /> 
             </div>
           </div>
         </div>
       </div>
     </section>    
-   
+  
+
   </div>
 )
 
-InvestorRelationsPageTemplate.propTypes = {
+AQSERule71Template.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   featuretitle: PropTypes.string,
@@ -89,12 +81,12 @@ InvestorRelationsPageTemplate.propTypes = {
   }),  
 }
 
-const InvestorRelationsPage = ({ data }) => {
+const AQSERule71 = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <InvestorRelationsPageTemplate
+      <AQSERule71Template
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -108,7 +100,7 @@ const InvestorRelationsPage = ({ data }) => {
   )
 }
 
-InvestorRelationsPage.propTypes = {
+AQSERule71.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -116,11 +108,11 @@ InvestorRelationsPage.propTypes = {
   }),
 }
 
-export default InvestorRelationsPage
+export default AQSERule71
 
 export const pageQuery = graphql`
-  query InvestorRelationsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "investor-relations" } }) {
+  query AQSERule71Template {
+    markdownRemark(frontmatter: { templateKey: { eq: "aqse-rule-71" } }) {
       frontmatter {
         title
         image {

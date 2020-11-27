@@ -3,15 +3,13 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Pdf from '../components/Pdf'
+import PdfReports from '../components/PdfReports'
                          
-export const InvestorRelationsPageTemplate = ({
+export const PresentationsandReportsPageTemplate = ({
   title,
   image,
-  featuretitle,
-  intro,
-  pdf
+  presentations,
+  reports
 }) => (
   <div>
     <div
@@ -38,7 +36,7 @@ export const InvestorRelationsPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS &gt;</Link><Link to="/investor-relations/presentations-and-reports">PRESENTATION &amp; REPORTS</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -55,60 +53,85 @@ export const InvestorRelationsPageTemplate = ({
         <div className="content">
           <div className="content columns">
             <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">{featuretitle}</h1>
+              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">Presentations</h1>
             </div>
           </div>
-          <Features gridItems={intro.blurbs} />
         </div>
       </div>
-    </section>
+    </section> 
     <section className="section section--gradient highlights">
       <div className="container">                        
         <div className="content">
           <div className="content columns">
-            <div className="column is-8 is-offset-2">
-              <Pdf gridItems={pdf.downloads} />
+            <div className="column is-12">
+              <PdfReports gridItems={presentations.downloads} />
             </div>
           </div>
         </div>
       </div>
-    </section>    
+    </section>  
+    <section className="section section--gradient highlights">
+      <div className="container">                        
+        <div className="content">
+          <div className="content columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">Reports</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section className="section section--gradient highlights">
+      <div className="container">                        
+        <div className="content">
+          <div className="content columns">
+            <div className="column is-12">
+              <PdfReports gridItems={reports.downloads} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>            
    
   </div>
 )
 
-InvestorRelationsPageTemplate.propTypes = {
+PresentationsandReportsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   featuretitle: PropTypes.string,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-  pdf: PropTypes.shape({
+  presentations: PropTypes.shape({
     downloads: PropTypes.array,
-  }),  
+  }),
+  reports: PropTypes.shape({
+    downloads: PropTypes.array,
+  }),    
 }
 
-const InvestorRelationsPage = ({ data }) => {
+const PresentationsandReportsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <InvestorRelationsPageTemplate
+      <PresentationsandReportsPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
         featuretitle = {frontmatter.featuretitle}
         intro={frontmatter.intro}
-        pdf={frontmatter.pdf}
+        presentations={frontmatter.presentations}
+        reports={frontmatter.reports}
         carousel={frontmatter.carousel}
       />
     </Layout>
   )
 }
 
-InvestorRelationsPage.propTypes = {
+PresentationsandReportsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -116,11 +139,11 @@ InvestorRelationsPage.propTypes = {
   }),
 }
 
-export default InvestorRelationsPage
+export default PresentationsandReportsPage
 
 export const pageQuery = graphql`
-  query InvestorRelationsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "investor-relations" } }) {
+  query PresentationsandReportsPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "presentations-and-reports" } }) {
       frontmatter {
         title
         image {
@@ -137,28 +160,20 @@ export const pageQuery = graphql`
           subdescription          
         }
         heading
-        featuretitle
-        pdf {
+        presentations {
           downloads {
             name
             text
-            updated
             url
           }
-        }         
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            header
+        }
+        reports {
+          downloads {
+            name
             text
+            url
           }
-        }                              
+        }                                              
       }
     }
   }

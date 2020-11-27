@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="59px" height="59px" viewBox="0 0 59 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 27</title>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-/-Apollon" transform="translate(-691.000000, -2071.000000)">
+            <g id="Group" transform="translate(354.000000, 1871.000000)">
+                <g id="Group-27" transform="translate(337.000000, 200.000000)">
+                    <circle id="Oval-Copy-4" fill="#FAFAFA" cx="29.5" cy="29.5" r="29.5"></circle>
+                    <g id="play-button-copy" transform="translate(22.000000, 20.000000)" fill="#4A4A4A" fill-rule="nonzero">
+                        <path d="M14.7909677,9.60784311 L0.758709677,0.0838025148 C0.61016129,-0.0166761134 0.417580645,-0.0271525581 0.258870968,0.054277989 C0.0996774194,0.13666094 0,0.29856963 0,0.475716785 L0,19.523798 C0,19.7009451 0.0996774194,19.86333 0.258870968,19.945713 C0.329516129,19.9819043 0.406935484,20 0.483870968,20 C0.58016129,20 0.675967742,19.9714279 0.758709677,19.9157122 L14.7909677,10.3916716 C14.9220968,10.3026219 15,10.1564278 15,9.99975738 C15,9.84308691 14.9216129,9.69689289 14.7909677,9.60784311 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

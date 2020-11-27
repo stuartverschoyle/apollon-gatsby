@@ -3,15 +3,12 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Pdf from '../components/Pdf'
-                         
-export const InvestorRelationsPageTemplate = ({
+import News from '../components/News'
+
+export const RegulatoryNewsPageTemplate = ({
   title,
   image,
-  featuretitle,
-  intro,
-  pdf
+  news
 }) => (
   <div>
     <div
@@ -38,7 +35,7 @@ export const InvestorRelationsPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS &gt;</Link><Link to="/investor-relations/regulatory-news">REGULATORY NEWS</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -54,33 +51,27 @@ export const InvestorRelationsPageTemplate = ({
       <div className="container over-hero">                        
         <div className="content">
           <div className="content columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">{featuretitle}</h1>
-            </div>
-          </div>
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient highlights">
-      <div className="container">                        
-        <div className="content">
+          </div>          
           <div className="content columns">
-            <div className="column is-8 is-offset-2">
-              <Pdf gridItems={pdf.downloads} />
+            <div className="column is-6 is-offset-2 news">
+              <h1 style={{color:"#000"}} className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{title}</h1>
+              <News gridItems={news.item} />
             </div>
           </div>
         </div>
       </div>
-    </section>    
-   
+    </section>  
+
   </div>
 )
 
-InvestorRelationsPageTemplate.propTypes = {
+RegulatoryNewsPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   featuretitle: PropTypes.string,
+  news: PropTypes.shape({
+    item: PropTypes.array,
+  }),
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -89,12 +80,12 @@ InvestorRelationsPageTemplate.propTypes = {
   }),  
 }
 
-const InvestorRelationsPage = ({ data }) => {
+const RegulatoryNewsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <InvestorRelationsPageTemplate
+      <RegulatoryNewsPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -103,12 +94,13 @@ const InvestorRelationsPage = ({ data }) => {
         intro={frontmatter.intro}
         pdf={frontmatter.pdf}
         carousel={frontmatter.carousel}
+        news={frontmatter.news}
       />
     </Layout>
   )
 }
 
-InvestorRelationsPage.propTypes = {
+RegulatoryNewsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -116,11 +108,11 @@ InvestorRelationsPage.propTypes = {
   }),
 }
 
-export default InvestorRelationsPage
+export default RegulatoryNewsPage
 
 export const pageQuery = graphql`
-  query InvestorRelationsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "investor-relations" } }) {
+  query RegulatoryNewsPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "regulatory-news" } }) {
       frontmatter {
         title
         image {
@@ -128,6 +120,13 @@ export const pageQuery = graphql`
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        news {
+          item {
+            date
+            text
+            url
           }
         }
         mainpitch {

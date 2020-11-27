@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Pdf from '../components/Pdf'
-                         
-export const InvestorRelationsPageTemplate = ({
+import remark from 'remark'
+import remarkHTML from 'remark-html'
+
+const toHTML = value => remark()
+                            .use(remarkHTML)
+                            .processSync(value)
+                            .toString()
+
+export const ShareHolderInformationPageTemplate = ({
   title,
   image,
-  featuretitle,
-  intro,
-  pdf
+  mainpitch
 }) => (
   <div>
     <div
@@ -38,7 +41,7 @@ export const InvestorRelationsPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/investor-relations">INVESTOR RELATIONS &gt;</Link><Link to="/investor-relations/shareholder-information">SHAREHOLDER INFORMATION</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -54,30 +57,50 @@ export const InvestorRelationsPageTemplate = ({
       <div className="container over-hero">                        
         <div className="content">
           <div className="content columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen is-offset-1">{featuretitle}</h1>
+            <div className="column is-8 is-offset-2 news">
+            <div dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}} /> 
             </div>
           </div>
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>
-    <section className="section section--gradient highlights">
-      <div className="container">                        
-        <div className="content">
           <div className="content columns">
-            <div className="column is-8 is-offset-2">
-              <Pdf gridItems={pdf.downloads} />
+            <div className="column is-8 is-offset-2 news">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <th>Shareholders</th>
+                  <th>Number of Ordinary Shares</th>
+                  <th>% of Ordinary Shares</th>
+                </tr>
+                <tr>
+                  <td>*********</td>
+                  <td>163,963,751</td>
+                  <td>16.09%</td>
+                </tr>
+                <tr>
+                  <td>*********</td>
+                  <td>132,136,364</td>
+                  <td>13.62%</td>
+                </tr>
+                <tr>
+                  <td>*********</td>
+                  <td>94,6777,778</td>
+                  <td>9.76%</td>
+                </tr>
+                <tr>
+                  <td>*********</td>
+                  <td>87,743,804</td>
+                  <td>9.05%</td>
+                </tr>                                          
+              </table>
             </div>
           </div>
         </div>
       </div>
     </section>    
-   
+  
+
   </div>
 )
 
-InvestorRelationsPageTemplate.propTypes = {
+ShareHolderInformationPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   featuretitle: PropTypes.string,
@@ -89,12 +112,12 @@ InvestorRelationsPageTemplate.propTypes = {
   }),  
 }
 
-const InvestorRelationsPage = ({ data }) => {
+const ShareHolderInformationPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <InvestorRelationsPageTemplate
+      <ShareHolderInformationPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -108,7 +131,7 @@ const InvestorRelationsPage = ({ data }) => {
   )
 }
 
-InvestorRelationsPage.propTypes = {
+ShareHolderInformationPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -116,11 +139,11 @@ InvestorRelationsPage.propTypes = {
   }),
 }
 
-export default InvestorRelationsPage
+export default ShareHolderInformationPage
 
 export const pageQuery = graphql`
-  query InvestorRelationsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "investor-relations" } }) {
+  query ShareHolderInformationPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "shareholder-information" } }) {
       frontmatter {
         title
         image {
