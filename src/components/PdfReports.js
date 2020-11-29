@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const FeatureGrid = ({ gridItems }) => (
   <div className="columns is-multiline" style={{justifyContent:"space-around"}}>
     {gridItems.map((item) => (
-      <div style={{maxWidth:"356px", width:"33.33%"}}>
+      <div className="pdf-container">
         <div key={item.text} style={{width:"100%"}} className="column is-4 green-border pdf-container">
           <div className="content columns">
             <div className="column is-12" style={{textAlign: "center"}}><img src="/img/pdf_icon.svg" alt="" /></div>

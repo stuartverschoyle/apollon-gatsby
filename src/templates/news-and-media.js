@@ -71,7 +71,7 @@ export const NewsAndMediaPageTemplate = ({
           <div className="content columns">
             <div className="column is-8 is-offset-2 news">
               <h1 className="title is-size-3-mobile is-size-3-tablet is-size-3-widescreen">Featured Content</h1>
-              <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%',height:'410px',marginBottom:"20px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+              <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%',height:'410px',marginBottom:"20px"}} frameBorder="0" allow="autoplay; fullscreen"></iframe>
               <p>09.11.2020<br /><span style={{fontFamily:"hk_groteskbold"}}>Apollon Formularies &amp; Doc’s Place International</span></p>
               <VideoGrid 
               gridItems={video.item} 

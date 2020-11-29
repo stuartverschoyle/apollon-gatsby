@@ -17,14 +17,46 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
+    <div>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url('/img/investor-relations/regulatory-news_hero-image@2x.jpg')`,
+        backgroundPosition: `center top`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          maxWidth: '1110px',
+          margin: '0 auto',
+          width: 'inherit'
+        }}
+      >
+        <div className="breadcrumb">
+        <Link to="/">HOME &gt;</Link><Link to="/blog">BLOG &gt;</Link><span>{title}</span>
+        </div>
+        <h1
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white'
+          }}
+        >
+          {title}
+        </h1>
+      </div>
+    </div>
     <section className="section">
       {helmet || ''}
-      <div className="container content">
+      <div className="container content over-hero">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
             <p>{description}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -43,6 +75,7 @@ export const BlogPostTemplate = ({
         </div>
       </div>
     </section>
+    </div>
   )
 }
 

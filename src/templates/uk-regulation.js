@@ -68,7 +68,7 @@ export const UkRegulationPageTemplate = ({
                       />
                     </div>
                     <div>
-                      <button className="btn btnInvert" style={{width: "178px"}}>Learn More</button>
+                    <button className="btn btnInvert" style={{width: "178px", marginTop:"20px"}}>Learn More</button>
                     </div>                    
                   </div>               
                 </div>

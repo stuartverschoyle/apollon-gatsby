@@ -13,9 +13,44 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
+   <div>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url('/img/investor-relations/regulatory-news_hero-image@2x.jpg')`,
+        backgroundPosition: `center top`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          maxWidth: '1110px',
+          margin: '0 auto',
+          width: 'inherit'
+        }}
+      >
+        <div className="breadcrumb">
+        <Link to="/">HOME &gt;</Link><Link to="/tags">Tags</Link>
+        </div>
+        <h1
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white'
+          }}
+        >
+          Tags
+        </h1>
+      </div>
+    </div>        
     <section className="section">
       <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
+      <div className="container content over-hero">
         <div className="columns">
           <div
             className="column is-10 is-offset-1"
@@ -35,6 +70,7 @@ const TagsPage = ({
         </div>
       </div>
     </section>
+    </div>
   </Layout>
 )
 

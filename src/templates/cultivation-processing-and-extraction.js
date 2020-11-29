@@ -61,17 +61,17 @@ export const CultivationPageTemplate = ({
             <div className="content">
               <div className="content columns">
                 <div className="column is-4 is-offset-1">
-                  <div className="tile">
+                  <div className="tile column">
                     <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                   </div>
                 </div>
                 <div className="column is-6">
-                  <div className="tile">
+                  <div className="tile column">
                     <div
                       dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                     />                    
                   </div>
-                    <div className="image-table">
+                    <div className="image-table column">
                       <div className="column is-4"><img src="/img/products/cultivation/01_handshake.svg" alt="Apollon Handshake" /></div>
                       <div className="column is-4"><img src="/img/products/cultivation/02_grow.svg" alt="Apollon Grow" /></div>
                       <div className="column is-4"><img src="/img/products/cultivation/03 weed.svg" alt="Apollon Weed &amp; Wellness" /></div>
@@ -92,12 +92,12 @@ export const CultivationPageTemplate = ({
             <div className="content">
               <div className="content columns">
                 <div className="column is-4 is-offset-1">
-                  <div className="tile">
+                  <div className="tile column">
                     <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
                   </div>
                 </div>
                 <div className="column is-6">
-                  <div className="tile" style={{flexDirection:"column"}}>
+                  <div className="tile column" style={{flexDirection:"column"}}>
                     <div style={{marginBottom: "20px"}} dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}} />  
                     <div dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}} />                      
                   </div>

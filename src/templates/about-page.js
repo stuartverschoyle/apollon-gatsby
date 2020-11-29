@@ -76,7 +76,7 @@ export const AboutPageTemplate = ({
                       />
                     </div>
                     <img src="/img/about-graph.svg" style={{width: '100%', height:"auto"}} alt="" />
-                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%', height:"458px"}} frameBorder="0" allow="autoplay; fullscreen"></iframe>
                   </div>
                 </div>
 

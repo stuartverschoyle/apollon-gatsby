@@ -22,6 +22,41 @@ class TagRoute extends React.Component {
 
     return (
       <Layout>
+    <div>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url('/img/investor-relations/regulatory-news_hero-image@2x.jpg')`,
+        backgroundPosition: `center top`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          height: '150px',
+          lineHeight: '1',
+          justifyContent: 'space-around',
+          alignItems: 'left',
+          flexDirection: 'column',
+          maxWidth: '1110px',
+          margin: '0 auto',
+          width: 'inherit'
+        }}
+      >
+        <div className="breadcrumb">
+        <Link to="/">HOME &gt;</Link><Link to="/tags">Tags</Link>
+        </div>
+        <h1
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          style={{
+            color: 'white'
+          }}
+        >
+          {tagHeader}
+        </h1>
+      </div>
+    </div>        
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
@@ -30,7 +65,6 @@ class TagRoute extends React.Component {
                 className="column is-10 is-offset-1"
                 style={{ marginBottom: '6rem' }}
               >
-                <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
                 <ul className="taglist">{postLinks}</ul>
                 <p>
                   <Link to="/tags/">Browse all tags</Link>
@@ -39,7 +73,9 @@ class TagRoute extends React.Component {
             </div>
           </div>
         </section>
+        </div>
       </Layout>
+      
     )
   }
 }
