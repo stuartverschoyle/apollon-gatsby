@@ -143,6 +143,7 @@ $size-3: 33px;
 
 .navbar-item.logo 
 {  position: absolute;
+  z-index:2;
   top: 30px;
   left: 30px}
 
@@ -249,12 +250,15 @@ a {
 }
 
 .pdf-container {
-  max-width:356px;
   width:33.33%
 }
 
-@media screen and (max-width: 1023px){
+.reports .pdf-container {
+  max-width: 365px;
+}
 
+@media screen and (max-width: 1023px){
+  .navbar-item.logo { z-index:0;}
   .breadcrumb {
     display: flex;
     flex-direction: column;

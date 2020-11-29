@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
                             
 const FeatureGrid = ({ gridItems }) => (
-  <div className="columns is-multiline" style={{justifyContent:"space-around"}}>
+  <div className="columns is-multiline reports" style={{justifyContent:"space-around"}}>
     {gridItems.map((item) => (
       <div className="pdf-container">
         <div key={item.text} style={{width:"100%"}} className="column is-4 green-border pdf-container">
