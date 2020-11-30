@@ -8,15 +8,12 @@ const AboutPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <AboutPageTemplate
-        image={getAsset(data.image)}
         title={data.title}
         heading={data.heading}
-        intro={data.intro || { blurbs: [] }}
         featuretitle={data.featuretitle}
+        image={getAsset(data.image)}
         mainpitch={data.mainpitch.title || data.mainpitch.description || data.mainpitch.image || data.mainpitch.subtitle || data.mainpitch.subdescription}
-        main={data.main || {}}
         carousel={data.carousel || { slides: [] }}
-        products={data.products || { slides: [] }}
       />
     )
   } else {
