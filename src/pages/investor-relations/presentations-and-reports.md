@@ -3,7 +3,6 @@ templateKey: 'presentations-and-reports'
 path: /investor-relations/presentations-and-reports
 title: Presentations & Reports
 image: /img/investor-relations/presentations-reports_hero-image@2x.jpg
-featuretitle: Presentations
 presentations:
   downloads:
     - name: INVESTOR PRESENTATION

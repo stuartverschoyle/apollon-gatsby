@@ -18,7 +18,6 @@ export const TradeMarkedProductsPageTemplate = ({
   image,
   main, 
   products, 
-
 }) => (
   <div>
     <div
@@ -87,14 +86,8 @@ export const TradeMarkedProductsPageTemplate = ({
 )
 
 TradeMarkedProductsPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   main: PropTypes.object,
   products: PropTypes.shape({
     slides: PropTypes.array,
@@ -107,12 +100,8 @@ const TradeMarkedProductsPage = ({ data }) => {
   return (
     <Layout>
       <TradeMarkedProductsPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
+        image={frontmatter.image}
         main={frontmatter.main}
         products={frontmatter.products}
       />
@@ -142,14 +131,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        mainpitch {
-          title
-          description
-          subtitle
-          subdescription          
-        }
-        heading
-        featuretitle
         main {
           heading
           description                                                                                                 

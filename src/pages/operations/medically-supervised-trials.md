@@ -11,7 +11,7 @@ mainpitch:
     **STRATEGY**
 
 
-    Apollon’s fully licenced full spectrum framework gives the company unrivalled ability to perform medically supervised trials. Apollon is one of a handful of companies worldwide able to do this.
+    Apollon’s fully licensed full spectrum framework gives the company unrivalled ability to perform medically supervised trials. Apollon is one of a handful of companies worldwide able to do this.
 
 
     Jamaica’s regulations mean that Apollon’s clinical human trials can be conducted using its own cannabis-based formulations along with placebo’s to revealing the medicine’s efficacy. Formulations are, and will continue to be, patented.

@@ -1,17 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { OurTeamPageTemplate } from '../../templates/our-team'
+import { JamaicanRegulatoryEnvironmentPageTemplate } from '../../templates/jamaican-regulatory-environment'
 
-const OurTeamPreview = ({ entry, getAsset }) => {
+const JamaicanRegulatoryEnvironmentPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
-      <OurTeamPageTemplate
+      <JamaicanRegulatoryEnvironmentPageTemplate
         title={data.title}
         image={getAsset(data.image)}
         mainpitch={data.mainpitch || {}}
-        intro={data.intro || { blurbs: [] } || { advisory: [] }}
       />
     )
   } else {
@@ -19,12 +18,11 @@ const OurTeamPreview = ({ entry, getAsset }) => {
   }
 }
 
-OurTeamPreview.propTypes = {
+JamaicanRegulatoryEnvironmentPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default OurTeamPreview
-
+export default JamaicanRegulatoryEnvironmentPagePreview

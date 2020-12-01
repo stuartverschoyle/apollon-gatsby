@@ -104,8 +104,8 @@ const OurTeamPage = ({ data }) => {
   return (
     <Layout>
       <OurTeamPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
+        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
         intro={frontmatter.intro}
       />

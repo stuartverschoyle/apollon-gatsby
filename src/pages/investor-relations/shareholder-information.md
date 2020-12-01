@@ -1,7 +1,7 @@
 ---
 templateKey: 'shareholder-information'
 path: /investor-relations/shareholder-information
-title: Share Holder Information
+title: Shareholder Information
 image: /img/investor-relations/shareholder-information_hero-image@2x.jpg
 featuretitle: Investment Highlights
 mainpitch:
@@ -47,12 +47,17 @@ mainpitch:
 
 
     # Shareholders Holding more than 5% of the issued Share Capital
-
-
-
-
-
-
+shareholders:
+  item:
+    - shareholder: Placement Name
+      numberofshares: 163,963,751
+      percentageofshares: 16.09%
+    - shareholder: Placement Name
+      numberofshares: 132,136,364
+      percentageofshares: 13.62%
+    - shareholder: Placement Name
+      numberofshares: 87,743,804
+      percentageofshares: 9.05%
 
 
 

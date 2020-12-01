@@ -1,22 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { HoldingPageTemplate } from '../../templates/holding-page'
+import { InvestorRelationsPageTemplate } from '../../templates/investor-relations'
 
-const HoldingPagePreview = ({ entry, getAsset }) => {
+const InvestorRelationsPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
-      <HoldingPageTemplate
+      <InvestorRelationsPageTemplate
         image={getAsset(data.image)}
         title={data.title}
-        heading={data.heading}
         intro={data.intro || { blurbs: [] }}
+        pdf={data.pdf || { downloads: [] }}
         featuretitle={data.featuretitle}
-        mainpitch={data.mainpitch || {}}
-        main={data.main || {}}
-        carousel={data.carousel || { slides: [] }}
-        products={data.products || { slides: [] }}
       />
     )
   } else {
@@ -24,11 +20,11 @@ const HoldingPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-HoldingPagePreview.propTypes = {
+InvestorRelationsPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default HoldingPagePreview
+export default InvestorRelationsPagePreview

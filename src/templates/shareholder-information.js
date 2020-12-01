@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Shareholders from '../components/Shareholders'
 import remark from 'remark'
 import remarkHTML from 'remark-html'
 
@@ -14,7 +15,8 @@ const toHTML = value => remark()
 export const ShareHolderInformationPageTemplate = ({
   title,
   image,
-  mainpitch
+  mainpitch,
+  shareholders
 }) => (
   <div>
     <div
@@ -69,26 +71,7 @@ export const ShareHolderInformationPageTemplate = ({
                   <th>Number of Ordinary Shares</th>
                   <th>% of Ordinary Shares</th>
                 </tr>
-                <tr>
-                  <td>*********</td>
-                  <td>163,963,751</td>
-                  <td>16.09%</td>
-                </tr>
-                <tr>
-                  <td>*********</td>
-                  <td>132,136,364</td>
-                  <td>13.62%</td>
-                </tr>
-                <tr>
-                  <td>*********</td>
-                  <td>94,6777,778</td>
-                  <td>9.76%</td>
-                </tr>
-                <tr>
-                  <td>*********</td>
-                  <td>87,743,804</td>
-                  <td>9.05%</td>
-                </tr>                                          
+                <Shareholders gridItems={shareholders.item} />                                        
               </table>
             </div>
           </div>
@@ -101,14 +84,12 @@ export const ShareHolderInformationPageTemplate = ({
 )
 
 ShareHolderInformationPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   featuretitle: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  pdf: PropTypes.shape({
-    downloads: PropTypes.array,
+  mainpitch: PropTypes.object,
+  shareholders: PropTypes.shape({
+    item: PropTypes.array,
   }),  
 }
 
@@ -118,14 +99,11 @@ const ShareHolderInformationPage = ({ data }) => {
   return (
     <Layout>
       <ShareHolderInformationPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
+        image={frontmatter.image}
         featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
-        pdf={frontmatter.pdf}
-        carousel={frontmatter.carousel}
+        mainpitch={frontmatter.mainpitch}
+        shareholders={frontmatter.shareholders}
       />
     </Layout>
   )
@@ -153,35 +131,20 @@ export const pageQuery = graphql`
             }
           }
         }
+        featuretitle
         mainpitch {
           title
           description
           subtitle
           subdescription          
         }
-        heading
-        featuretitle
-        pdf {
-          downloads {
-            name
-            text
-            updated
-            url
+        shareholders {
+          item {
+            shareholder
+            numberofshares
+            percentageofshares
           }
-        }         
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            header
-            text
-          }
-        }                              
+        }        
       }
     }
   }

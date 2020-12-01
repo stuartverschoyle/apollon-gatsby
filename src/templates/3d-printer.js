@@ -12,7 +12,7 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const AIPageTemplate = ({
+export const ThreeDPageTemplate = ({
   title,
   image,
   mainpitch,
@@ -42,7 +42,7 @@ export const AIPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-        <Link to="/">HOME &gt;</Link><Link to="/operations/docs-place-international">OPERATIONS &gt;</Link><Link to="/operations/artificial-intelligence">ARTIFICIAL INTELLIGENCE</Link>
+          <Link to="/">HOME &gt;</Link><Link to="/products/trademarked-products">PRODUCTS &gt;</Link><Link to="/products/3d-printer">3D PRINTER</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -61,30 +61,24 @@ export const AIPageTemplate = ({
             <div className="column is-12">
             <div className="content">
                 <div className="content columns">
-                  <div className="column is-8 is-offset-2">
-                    <h2 style={{textAlign:"center", color:"#78C67D", fontSize:"24px", marginBottom:"40px"}}>{mainpitch.title}</h2>
+                  <div className="column is-5 is-offset-1">
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                       />
                     </div>
+                    <div className="tile content">
+                      <div
+                        className="list-icon"
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
+                      />                      
+                    </div>
                   </div>
+                  <div className="column is-4 is-offset-1">
+                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
+                  </div>                  
                 </div>
               </div>
-              <div className="content">
-                <div className="content columns">
-                  <div className="column is-6 is-offset-3">
-                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
-                  </div>
-                </div>
-              </div> 
-              <div className="content">
-                <div className="content columns">
-                  <div className="column is-8 is-offset-2">
-                    <p>{mainpitch.footnote}</p>
-                  </div>
-                </div>
-              </div>                                      
             </div>
           </div>
         </div>
@@ -93,29 +87,27 @@ export const AIPageTemplate = ({
   </div>
 )
 
-AIPageTemplate.propTypes = {
+ThreeDPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
   mainpitch: PropTypes.object, 
 }
 
-const AIInternationalPage = ({ data }) => {
+const ThreeDPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <AIPageTemplate
+      <ThreeDPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
       />
     </Layout>
   )
 }
 
-AIInternationalPage.propTypes = {
+ThreeDPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -123,11 +115,11 @@ AIInternationalPage.propTypes = {
   }),
 }
 
-export default AIInternationalPage
+export default ThreeDPage
 
 export const pageQuery = graphql`
-  query AIPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "ai" } }) {
+  query ThreeDPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "3d-printer" } }) {
       frontmatter {
         title
         image {
@@ -146,10 +138,9 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-          }
-          footnote
+          }          
+          list
         }
-        heading                      
       }
     }
   }

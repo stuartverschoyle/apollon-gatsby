@@ -4,7 +4,6 @@ path: /about
 title: About Apollon
 image: /img/about-apollon_hero-image_01@2x.jpg 
 mainpitch:
-  title: Who is Apollon 
   description: >
     Apollon’s strategy is to become the proven global medical cannabis company licenced to develop full spectrum formulations based on real life clinical patient data.
 
@@ -44,36 +43,7 @@ mainpitch:
     **Our strategy is to become the premiere global medical cannabis company legally licensed to develop successful personalised clinical treatments utilizing artificial intelligence on clinical trial patient data.**
 
 
-    Apollon’s R&D License allows drug discovery using THC and other cannabinoids. This allows Apollon to be the rare European listed company conducting human R&D using THC to develop new therapeutics.
-heading: Apollon Formularies
-featuretitle: Meet the people who make it happen
-intro:
-  blurbs:
-    - image: /img/cost.png
-      header: Low Cost
-      text: |
-        High quality production.
-    - image: /img/cycles.png
-      header: 3.5 Outdoor growing cycles
-      text: |
-        per year, ideal climate and soil conditions
-    - image: /img/granted.png
-      header: Conditional approvals/ Granted Licences
-      text: >
-        cultivation, processing, extraction, transportation, retail
-        (therapeutic) and R&D
-    - image: /img/patent.png
-      header: 7 Patents pending
-      text: |
-        for medical cannibis products for sale with multiyear clinical trials
-    - image: /img/trials.png
-      header: Backed by clinical trials
-      text: |
-        true efficacy of Apollon's cannabis-based medicines is measured   
-    - image: /img/global.png
-      header: Stong global recognition
-      text: |
-        of Jamaican growers and brands             
+    Apollon’s R&D License allows drug discovery using THC and other cannabinoids. This allows Apollon to be the rare European listed company conducting human R&D using THC to develop new therapeutics.          
 carousel: 
   slides: 
     - image: /img/our_strategy_01@2x.jpg 

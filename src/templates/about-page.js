@@ -17,13 +17,7 @@ export const AboutPageTemplate = ({
   title,
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
   carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -138,8 +132,6 @@ const AboutPage = ({ data }) => {
     <Layout>
       <AboutPageTemplate
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        featuretitle = {frontmatter.featuretitle}
         image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
         carousel={frontmatter.carousel}
@@ -162,9 +154,7 @@ export const pageQuery = graphql`
   query AboutPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       frontmatter {
-        title
-        heading
-        featuretitle        
+        title    
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -173,7 +163,6 @@ export const pageQuery = graphql`
           }
         }
         mainpitch {
-          title
           description
           subtitle
           subdescription          

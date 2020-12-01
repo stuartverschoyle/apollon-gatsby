@@ -1,5 +1,5 @@
 ---
-templateKey: 'three-d'
+templateKey: '3d-printer'
 path: /products/3d-printer
 title: 3D Printer
 image: /img/products/3d-printer_hero-image@2x.jpg

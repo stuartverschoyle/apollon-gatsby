@@ -12,7 +12,7 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const ThreeDPageTemplate = ({
+export const ArtificialIntelligencePageTemplate = ({
   title,
   image,
   mainpitch,
@@ -42,7 +42,7 @@ export const ThreeDPageTemplate = ({
         }}
       >
         <div className="breadcrumb">
-          <Link to="/">HOME &gt;</Link><Link to="/products/trademarked-products">PRODUCTS &gt;</Link><Link to="/products/3d-printer">3D PRINTER</Link>
+        <Link to="/">HOME &gt;</Link><Link to="/operations/docs-place-international">OPERATIONS &gt;</Link><Link to="/operations/artificial-intelligence">ARTIFICIAL INTELLIGENCE</Link>
         </div>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
@@ -61,24 +61,30 @@ export const ThreeDPageTemplate = ({
             <div className="column is-12">
             <div className="content">
                 <div className="content columns">
-                  <div className="column is-5 is-offset-1">
+                  <div className="column is-8 is-offset-2">
+                    <h2 style={{textAlign:"center", color:"#78C67D", fontSize:"24px", marginBottom:"40px"}}>{mainpitch.title}</h2>
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
                       />
                     </div>
-                    <div className="tile content">
-                      <div
-                        className="list-icon"
-                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
-                      />                      
-                    </div>
                   </div>
-                  <div className="column is-4 is-offset-1">
-                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
-                  </div>                  
                 </div>
               </div>
+              <div className="content">
+                <div className="content columns">
+                  <div className="column is-6 is-offset-3">
+                    <img src={!!mainpitch.image.childImageSharp ? mainpitch.image.childImageSharp.fluid.src : mainpitch.image} alt="" />
+                  </div>
+                </div>
+              </div> 
+              <div className="content">
+                <div className="content columns">
+                  <div className="column is-8 is-offset-2">
+                    <p>{mainpitch.footnote}</p>
+                  </div>
+                </div>
+              </div>                                      
             </div>
           </div>
         </div>
@@ -87,29 +93,27 @@ export const ThreeDPageTemplate = ({
   </div>
 )
 
-ThreeDPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+ArtificialIntelligencePageTemplate.propTypes = {
   title: PropTypes.string,
-  heading: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object, 
 }
 
-const ThreeDPage = ({ data }) => {
+const ArtificialIntelligencePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <ThreeDPageTemplate
-        image={frontmatter.image}
+      <ArtificialIntelligencePageTemplate
         title={frontmatter.title}
-        heading={frontmatter.heading}
+        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
       />
     </Layout>
   )
 }
 
-ThreeDPage.propTypes = {
+ArtificialIntelligencePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -117,11 +121,11 @@ ThreeDPage.propTypes = {
   }),
 }
 
-export default ThreeDPage
+export default ArtificialIntelligencePage
 
 export const pageQuery = graphql`
-  query ThreeDPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "three-d" } }) {
+  query ArtificialIntelligencePageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "artificial-intelligence" } }) {
       frontmatter {
         title
         image {
@@ -141,9 +145,8 @@ export const pageQuery = graphql`
               }
             }
           }          
-          list
+          footnote
         }
-        heading                      
       }
     }
   }

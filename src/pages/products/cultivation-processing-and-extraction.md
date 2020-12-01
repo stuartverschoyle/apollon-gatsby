@@ -7,7 +7,8 @@ mainpitch:
   title: Cultivation
   description: >
     In July 2019, Apollon established the Apollon Cannabis Collective, a commercial platform to facilitate and engage local  farmers to grow medical cannabis crop for processing by Apollon at its licensed facilities, giving Apollon access to additional growers and land and reinforcing Apollon’s commitment to working with Jamaican farmers and businesses.  
-  footernote: Apollon Jamaica Ltd owns and operates processing facilities under a Tier 2 licence to process up to 300lb of full spectrum cannabis per day producing around 30lb of full spectrum oil for production of its formulations.
+  footernote: > 
+    Apollon Jamaica Ltd owns and operates processing facilities under a Tier 2 licence to process up to 300lb of full spectrum cannabis per day producing around 30lb of full spectrum oil for production of its formulations.
   subtitle: Processing & extraction
   subdescription: >
     Apollon is the only holder of a Tier 2 Licence for production in Jamaica

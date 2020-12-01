@@ -70,14 +70,9 @@ export const UnderstandingCannabisPageTemplate = ({
 )
 
 UnderstandingCannabisPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  carousel: PropTypes.shape({
-    slides: PropTypes.array,
-  })  
 }
 
 const AboutPage = ({ data }) => {
@@ -86,9 +81,8 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <UnderstandingCannabisPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
+        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
       />
     </Layout>
@@ -119,11 +113,8 @@ export const pageQuery = graphql`
         }
         mainpitch {
           title
-          description
           subtitle
-          subdescription          
         }
-        heading                      
       }
     }
   }

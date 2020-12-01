@@ -119,13 +119,8 @@ const PresentationsandReportsPage = ({ data }) => {
       <PresentationsandReportsPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
         presentations={frontmatter.presentations}
         reports={frontmatter.reports}
-        carousel={frontmatter.carousel}
       />
     </Layout>
   )
@@ -153,13 +148,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        mainpitch {
-          title
-          description
-          subtitle
-          subdescription          
-        }
-        heading
         presentations {
           downloads {
             name

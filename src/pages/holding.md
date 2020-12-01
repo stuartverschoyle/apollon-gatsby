@@ -32,7 +32,7 @@ intro:
     - image: /img/patent.png
       header: 7 Patents pending
       text: |
-        for medical cannibis products for sale with multiyear clinical trials
+        for medical cannabis products for sale with multiyear clinical trials
     - image: /img/trials.png
       header: Backed by clinical trials
       text: |

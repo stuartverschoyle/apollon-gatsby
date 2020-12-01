@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { OurTeamPageTemplate } from '../../templates/our-team'
+import { ShareHolderInformationPageTemplate } from '../../templates/shareholder-information'
 
-const OurTeamPreview = ({ entry, getAsset }) => {
+const ShareHolderPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
-      <OurTeamPageTemplate
+      <ShareHolderInformationPageTemplate
+        heading={data.heading}
         title={data.title}
         image={getAsset(data.image)}
         mainpitch={data.mainpitch || {}}
-        intro={data.intro || { blurbs: [] } || { advisory: [] }}
+        carousel={data.carousel || { slides: [] }}
       />
     )
   } else {
@@ -19,12 +20,11 @@ const OurTeamPreview = ({ entry, getAsset }) => {
   }
 }
 
-OurTeamPreview.propTypes = {
+ShareHolderPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default OurTeamPreview
-
+export default ShareHolderPagePreview

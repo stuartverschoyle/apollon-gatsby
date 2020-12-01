@@ -49,31 +49,25 @@ collections:
         name: "index"    
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: Heading, name: heading, widget: string}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Featuretitle, name: featuretitle, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
           - {label: Carousel, name: carousel, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
-          - {label: Products, name: products, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Featuretitle, name: featuretitle, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Image, name: image, widget: image}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}, {label: Image, name: image, widget: image}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
           - {label: Carousel, name: carousel, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
       - file: "src/pages/about/our-team.md"
         label: "Our team"
-        name: "our team"
+        name: "our-team"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "our-team"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string}]}
@@ -87,7 +81,7 @@ collections:
                 name: blurbs, 
                 widget: list, 
                 fields: [
-                  {label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text},{label: Description, name: description, widget: markdown}
+                  {label: Image, name: image, widget: image},{label: Header, name: header, widget: text},{label: Text, name: text, widget: text},{label: Description, name: description, widget: markdown}
                 ]
               },
               {
@@ -95,100 +89,128 @@ collections:
                 name: advisory, 
                 widget: list, 
                 fields: [
-                  {label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text},{label: Description, name: description, widget: markdown}
+                  {label: Image, name: image, widget: image},{label: Header, name: header, widget: text},{label: Text, name: text, widget: text},{label: Description, name: description, widget: markdown}
                 ]
               }              
             ]
           }
-      - file: "src/pages/about/understanding-cannibis.md"
-        label: "Understanding Cannibis"
-        name: "understanding cannibis"    
+      - file: "src/pages/about/understanding-cannabis.md"
+        label: "Understanding Cannabis"
+        name: "understanding-cannabis"    
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "understanding-cannibis"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "understanding-cannabis"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Featuretitle, name: featuretitle, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
-          - {label: Carousel, name: carousel, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
-          - {label: Products, name: products, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string}]}
       - file: "src/pages/operations/docs-place-international.md"
         label: "Docs Place International"
-        name: "docs place international"    
+        name: "docs-place-international"    
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "docs-place-international"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}, {label: List, name: list, widget: markdown}]}
       - file: "src/pages/operations/medically-supervised-trials.md"
         label: "Medically Supervised Trials"
-        name: "medically supervised trials"    
+        name: "medically-supervised-trials"    
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "medically-supervised-trials"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}
-      - file: "src/pages/operations/ai.md"
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}]}
+      - file: "src/pages/operations/artificial-intelligence.md"
         label: "Artificial Intelligence"
-        name: "artificial intelligence"    
+        name: "artificial-intelligence"    
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ai"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "artificial-intelligence"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string} 
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown},{label: Image, name: image, widget: image},{label: Footnote, name: footnote, widget: string}]}
       - file: "src/pages/products/trademarked-products.md"
         label: "Trademarked Products"
-        name: "Trademarked Products"    
+        name: "trademarked-products"    
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "trademarked-products"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Featuretitle, name: featuretitle, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}]}
-          - {label: Carousel, name: carousel, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
+          - {label: Main, name: main, widget: object, fields: [{label: Description, name: description, widget: markdown}]}
           - {label: Products, name: products, widget: object, fields: [{label: Slides, name: slides, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: text}]}]}
       - file: "src/pages/products/3d-printer.md"
         label: "3D Printer"
-        name: "3d printer"    
+        name: "3d-printer"    
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "three-d"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "3d-printer"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: Subtitle, name: subtitle, widget: string}, {label: Subdescription, name: subdescription, widget: markdown}]}
-          - {label: Heading, name: heading, widget: string}                            
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: markdown}, {label: List, name: list, widget: markdown}]}
+      - file: "src/pages/products/cultivation-processing-and-extraction.md"
+        label: "Cultivation, processing & extraction"
+        name: "cultivation-processing-and-extraction"    
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "cultivation-processing-and-extraction"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
-      - file: "src/pages/partners/index.md"
-        label: "Partners Page"
-        name: "partners"
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string},{label: Description, name: description, widget: markdown},{label: Subtitle, name: subtitle, widget: string},{label: Subdescription, name: subdescription, widget: markdown},{label: Footernote, name: footernote, widget: markdown}, {label: List, name: list, widget: markdown}]}
+      - file: "src/pages/regulation/apollon-licences.md"
+        label: "Apollon Licences"
+        name: "apollon-licences"    
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "partner-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "apollon-licences"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}
+      - file: "src/pages/regulation/global-regulation.md"
+        label: "Global Regulation"
+        name: "global-regulation"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "global-regulation"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}]}
+      - file: "src/pages/regulation/jamaican-regulatory-environment.md"
+        label: "Jamaican Regulatory Environment"
+        name: "jamaican-regulatory-environment"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "jamaican-regulatory-environment"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}
+      - file: "src/pages/regulation/uk-regulation.md"
+        label: "UK Regulation"
+        name: "uk-regulation"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "uk-regulation"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}]}                    
+      - file: "src/pages/investor-relations/index.md"
+        label: "Investor Relations"
+        name: "investor-relations"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "investor-relations"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Featuretitle, name: featuretitle, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text},{label: Header, name: header, widget: text}]}]}
+          - {label: Pdf, name: pdf, widget: object, fields: [{label: Downloads, name: downloads, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Updated, name: updated, widget: string},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
+      - file: "src/pages/investor-relations/shareholder-information.md"
+        label: "Shareholder Information"
+        name: "shareholder-information"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shareholder-information"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Featuretitle, name: featuretitle, widget: string}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}
+          - {label: Shareholders, name: shareholders, widget: object, fields: [{label: Item, name: item, widget: list, fields: [{label: Shareholder, name: shareholder, widget: text},{label: Number of Shares, name: numberofshares, widget: text},{label: Percentage of Shares, name: percentageofshares, widget: text}]}]}
+      - file: "src/pages/investor-relations/presentations-and-reports.md"
+        label: "Presentations & Reports"
+        name: "presentations-and-reports"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "presentations-and-reports"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Presentations, name: presentations, widget: object, fields: [{label: Downloads, name: downloads, widget: list, fields: [{label: Name, name: name, widget: text},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
+          - {label: Reports, name: reports, widget: object, fields: [{label: Downloads, name: downloads, widget: list, fields: [{label: Name, name: name, widget: text},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
+
+          

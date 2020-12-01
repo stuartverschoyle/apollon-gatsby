@@ -4,7 +4,6 @@ path: /regulation/jamaican-regulatory-environment
 title: Jamaican Regulatory Environment
 image: /img/regulation/jamaican-regulatory-environment_hero-image@2x.jpg
 mainpitch:
-  title: COMBINING PIONEERING TECHNOLOGY & SCIENCE WITH THE POWER OF NATURE
   description: >
     The Cannabis Licensing Authority (CLA), an agency of the Ministry of Industry, Commerce, Agriculture and Fisheries, was established in 2015 under the Dangerous Drug (Amendment) Act, (DDA) with a specific role to establish and regulate Jamaica’s legal ganja and hemp industry.
 

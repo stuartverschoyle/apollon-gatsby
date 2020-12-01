@@ -9,10 +9,8 @@ const AboutPagePreview = ({ entry, getAsset }) => {
     return (
       <AboutPageTemplate
         title={data.title}
-        heading={data.heading}
-        featuretitle={data.featuretitle}
         image={getAsset(data.image)}
-        mainpitch={data.mainpitch.title || data.mainpitch.description || data.mainpitch.image || data.mainpitch.subtitle || data.mainpitch.subdescription}
+        mainpitch={data.mainpitch || {}}
         carousel={data.carousel || { slides: [] }}
       />
     )

@@ -77,7 +77,7 @@ export const CultivationPageTemplate = ({
                       <div className="column is-4"><img src="/img/products/cultivation/03 weed.svg" alt="Apollon Weed &amp; Wellness" /></div>
                     </div>                  
                     <h5 style={{textAlign:"center", marginTop:"40px"}}>SEED TO HARVEST TIME OF APPROXIMATELY NINE WEEKS</h5>
-                    <p>{mainpitch.footernote}</p>
+                    <div dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.footernote)}} />  
                 </div>
               </div>
             </div>

@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { OurTeamPageTemplate } from '../../templates/our-team'
+import { MedicallySupervisedTrialsPageTemplate } from '../../templates/medically-supervised-trials'
 
-const OurTeamPreview = ({ entry, getAsset }) => {
+const MedicallySupervisedTrialsPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
-      <OurTeamPageTemplate
+      <MedicallySupervisedTrialsPageTemplate
+        heading={data.heading}
         title={data.title}
         image={getAsset(data.image)}
         mainpitch={data.mainpitch || {}}
-        intro={data.intro || { blurbs: [] } || { advisory: [] }}
       />
     )
   } else {
@@ -19,12 +19,11 @@ const OurTeamPreview = ({ entry, getAsset }) => {
   }
 }
 
-OurTeamPreview.propTypes = {
+MedicallySupervisedTrialsPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default OurTeamPreview
-
+export default MedicallySupervisedTrialsPagePreview
