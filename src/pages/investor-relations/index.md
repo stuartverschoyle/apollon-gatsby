@@ -1,5 +1,5 @@
 ---
-templateKey: 'investor-relations'
+templateKey: investor-relations
 path: /investor-relations
 title: Investor Relations
 image: /img/investor-relations/investor-relations_hero-image@2x.jpg
@@ -37,6 +37,5 @@ pdf:
       updated: 16.11.2020
       text: |
         Presentation for Q3 2020
-      url: http://www.google.com                    
-
+      url: http://www.google.com
 ---
