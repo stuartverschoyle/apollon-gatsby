@@ -41,5 +41,5 @@ pdf:
     - name: test
       updated: 02.11.2020
       text: this is a test
-      url: www.test.com
+      url: /img/01_thc-vape@2x.jpg
 ---
