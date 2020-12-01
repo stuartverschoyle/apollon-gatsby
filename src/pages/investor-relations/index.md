@@ -38,8 +38,4 @@ pdf:
       text: |
         Presentation for Q3 2020
       url: http://www.google.com
-    - name: test
-      updated: 02.11.2020
-      text: this is a test
-      url: /img/01_thc-vape@2x.jpg
 ---
