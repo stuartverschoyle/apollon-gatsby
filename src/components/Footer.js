@@ -12,9 +12,9 @@ const Footer = class extends React.Component {
           <div className="container">
             <div style={{ maxWidth: '100vw' }} className="columns">
                <div className="column is-3">
-                <img src={logo} alt="Apollon" style={{ width: '14em'}} />
+               <Link className="navbar-item" to="/"><img src={logo} alt="Apollon" style={{ width: '14em'}} /></Link>
               </div>
-              {/* <div className="column is-3">
+              <div className="column is-3">
                 <Link className="navbar-item" to="/about">
                   About
                 </Link>
@@ -23,17 +23,17 @@ const Footer = class extends React.Component {
                   <li><Link className="navbar-item" to="/about/our-team">Our Team</Link></li>
                   <li><Link className="navbar-item" to="/about/understanding-cannabis">Understanding cannabis</Link></li>
                 </ul>
-                <Link className="navbar-item" to="/operations">
+                <Link className="navbar-item" to="/operations/docs-place-international">
                   Operations
                 </Link>        
                 <ul>
                   <li><Link className="navbar-item" to="/operations/docs-place-international">Doc's Place International</Link></li>
-                  <li><Link className="navbar-item" to="/operations/medicall-supervised-trials">Medically supervised trials</Link></li>
+                  <li><Link className="navbar-item" to="/operations/medically-supervised-trials">Medically supervised trials</Link></li>
                   <li><Link className="navbar-item" to="/operations/artificial-intelligence">Artificial intelligence</Link></li>
                 </ul>                              
               </div>
               <div className="column is-3">
-                <Link className="navbar-item" to="/products">
+                <Link className="navbar-item" to="/products/trademarked-products">
                 Products
                 </Link>
                 <ul>
@@ -41,7 +41,7 @@ const Footer = class extends React.Component {
                   <li><Link className="navbar-item" to="/products/3d-printer">3D Printer</Link></li>
                   <li><Link className="navbar-item" to="/products/cultivation-processing-and-extraction">Cultivation, processing &amp; extraction</Link></li>
                 </ul>                 
-                <Link className="navbar-item" to="/regulation">
+                <Link className="navbar-item" to="/regulation/apollon-licences">
                 Regulation
                 </Link>
                 <ul>
@@ -57,7 +57,7 @@ const Footer = class extends React.Component {
                 </Link>
                 <ul>
                   <li><Link className="navbar-item" to="/investor-relations/">Investor Relations</Link></li>
-                  <li><Link className="navbar-item" to="/investor-relations/share-price-information">Share Prince Information</Link></li>
+                  <li><a className="navbar-item" href="https://www.aquis.eu/aquis-stock-exchange/member?securityidaqse=AFRI" target="_blank" rel="noreferrer">Share Price Information</a></li>
                   <li><Link className="navbar-item" to="/investor-relations/shareholder-information">Shareholder Information</Link></li>
                   <li><Link className="navbar-item" to="/investor-relations/presentations-and-reports">Presentations &amp; Reports</Link></li>
                   <li><Link className="navbar-item" to="/investor-relations/news-and-media">News &amp; Media</Link></li>
@@ -68,7 +68,7 @@ const Footer = class extends React.Component {
                 <Link className="navbar-item" to="/contact">
                 Contact Us
                 </Link>                      
-              </div>                                           */}
+              </div>                                          
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ const Footer = class extends React.Component {
               <p>Copyright &copy; 2020 Apollon Formularies Ltd. All rights reserved</p>
             </div>
             <div className="column is-4 has-text-right">
-                <p style={{display:'inline-flex'}}><span role="img" aria-label="powered">&#9889;</span> by&nbsp;<b>Kare</b>&nbsp;<img src={Karelogo} alt="Kare" style={{ height: '1.5em'}} /></p>
+                <p style={{display:'inline-flex'}}><span role="img" aria-label="powered">&#9889;</span> by&nbsp;<b>kare</b>&nbsp;<img src={Karelogo} alt="Kare" style={{ height: '1.5em'}} /></p>
             </div> 
           </div>
         </div>

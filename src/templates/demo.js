@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import Carousel from '../components/Carousel'
 
 import remark from 'remark'
@@ -14,17 +13,12 @@ const toHTML = value => remark()
                             .processSync(value)
                             .toString()
                              
-export const HoldingPageTemplate = ({
+export const IndexHoldingPageTemplate = ({
   title,
+  heading, 
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
   carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -33,7 +27,7 @@ export const HoldingPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `top center`,
         backgroundAttachment: `fixed`,
       }}
     >
@@ -64,7 +58,7 @@ export const HoldingPageTemplate = ({
         <Link style={{
           width:'200px',
           marginTop: '30px'
-        }} className="btn" to="/blog">
+        }} className="btn" to="/about">
           Learn more
         </Link>
       </div>
@@ -90,7 +84,7 @@ export const HoldingPageTemplate = ({
                     <Link style={{
                       width:'322px',
                       marginTop: '30px'
-                    }} className="btn btnInvert" to="/blog">
+                    }} className="btn btnInvert" to="/about">
                       Learn more about Apollon
                   </Link>                     
                   </div>
@@ -134,86 +128,36 @@ export const HoldingPageTemplate = ({
       </div> 
     </section>
 
-    <section className="section section--gradient">
-      <div className="container column">                        
-        <div className="columns">
-          <div className="column is-12">
-            <div className="content">
-              <div className="content columns">
-                <div className="column is-3 is-offset-1">
-                  <div className="tile">
-                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{main.heading}</h1>
-                  </div>
-                </div> 
-                <div className="column is-6 is-offset-1 productlist">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: toHTML(main.description)}}/>                                          
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
-    <section className="section section--gradient" style={{marginBottom:'70px'}}>
-      <div className="columns">
-        <div className="column is-12 ">
-        <Carousel gridItems={products.slides} />             
-        </div>                
-      </div> 
-    </section>
-    <section className="section section--gradient highlights">
-      <div className="container">                        
-        <div className="content">
-          <div className="has-text-centered">
-              <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{featuretitle}</h1>
-          </div>                              
-          <Features gridItems={intro.blurbs} />
-        </div>
-      </div>
-    </section>
   </div>
 )
 
-HoldingPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+IndexHoldingPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  main: PropTypes.object,
   carousel: PropTypes.shape({
     slides: PropTypes.array,
-  }), 
-  products: PropTypes.shape({
-    slides: PropTypes.array,
-  }),    
+  }),   
 }
 
-const HoldingPage = ({ data }) => {
+const IndexHoldingPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <HoldingPageTemplate
-        image={frontmatter.image}
+      <IndexHoldingPageTemplate
         title={frontmatter.title}
         heading={frontmatter.heading}
+        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
         carousel={frontmatter.carousel}
-        products={frontmatter.products}
       />
     </Layout>
   )
 }
 
-HoldingPage.propTypes = {
+IndexHoldingPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -221,13 +165,14 @@ HoldingPage.propTypes = {
   }),
 }
 
-export default HoldingPage
+export default IndexHoldingPage
 
 export const pageQuery = graphql`
-  query HoldingPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "holding-page" } }) {
+  query IndexHoldingPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "demo" } }) {
       frontmatter {
         title
+        heading
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -241,25 +186,6 @@ export const pageQuery = graphql`
           subtitle
           subdescription          
         }
-        heading
-        featuretitle
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            header
-            text
-          }
-        }
-        main {
-          heading
-          description                                                                                                 
-        }
         carousel {
           slides {
             image {
@@ -271,19 +197,7 @@ export const pageQuery = graphql`
             }
             alt
           }
-        }
-        products {
-          slides {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-          }
-        }                       
+        }                      
       }
     }
   }

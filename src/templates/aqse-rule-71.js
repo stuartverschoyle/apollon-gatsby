@@ -89,12 +89,7 @@ const AQSERule71 = ({ data }) => {
       <AQSERule71Template
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
-        pdf={frontmatter.pdf}
-        carousel={frontmatter.carousel}
       />
     </Layout>
   )
@@ -128,29 +123,6 @@ export const pageQuery = graphql`
           subtitle
           subdescription          
         }
-        heading
-        featuretitle
-        pdf {
-          downloads {
-            name
-            text
-            updated
-            url
-          }
-        }         
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            header
-            text
-          }
-        }                              
       }
     }
   }

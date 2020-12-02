@@ -6,7 +6,6 @@ import AboutPagePreview from './preview-templates/AboutPagePreview'
 import OurTeamPagePreview from './preview-templates/OurTeamPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
-import HoldingPagePreview from './preview-templates/HoldingPagePreview'
 import UnderstadingCannabisPagePreview from './preview-templates/UnderstadingCannabisPagePreview'
 import DocsPlaceInternationalPagePreview from './preview-templates/DocsPlaceInternationalPagePreview'
 import MedicallySupervisedTrialsPagePreview from './preview-templates/MedicallySupervisedTrialsPagePreview'
@@ -20,12 +19,13 @@ import InvestorRelationsPagePreview from './preview-templates/InvestorRelationsP
 import ShareHolderPagePreview from './preview-templates/ShareHolderPagePreview'
 import PresentationAndReportsPagePreview from './preview-templates/PresentationAndReportsPagePreview'
 import NewsAndMediaPagePreview from './preview-templates/NewsAndMediaPagePreview'
-
+import RegulatoryNewsPagePreview from './preview-templates/RegulatoryNewsPagePreview'
+import AqseRule71PagePreview from './preview-templates/AqseRule71PagePreview'
+import AdvisersPagePreview from './preview-templates/AdvisersPagePreview'
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('holding', HoldingPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('our-team', OurTeamPagePreview)
 CMS.registerPreviewTemplate('understanding-cannabis', UnderstadingCannabisPagePreview)
@@ -43,4 +43,7 @@ CMS.registerPreviewTemplate('investor-relations', InvestorRelationsPagePreview)
 CMS.registerPreviewTemplate('shareholder-information', ShareHolderPagePreview)
 CMS.registerPreviewTemplate('presentations-and-reports', PresentationAndReportsPagePreview)
 CMS.registerPreviewTemplate('news-and-media', NewsAndMediaPagePreview)
+CMS.registerPreviewTemplate('regulatory-news', RegulatoryNewsPagePreview)
+CMS.registerPreviewTemplate('aqse-rule-71', AqseRule71PagePreview)
+CMS.registerPreviewTemplate('advisers', AdvisersPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)

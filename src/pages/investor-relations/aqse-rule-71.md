@@ -3,7 +3,6 @@ templateKey: 'aqse-rule-71'
 path: /investor-relations/aqse-rule-71
 title: AQSE Rule 71
 image: /img/investor-relations/aqse-rule-71_hero-image@2x.jpg
-featuretitle: Investment Highlights
 mainpitch:
   title: Who is Apollon 
   description: >

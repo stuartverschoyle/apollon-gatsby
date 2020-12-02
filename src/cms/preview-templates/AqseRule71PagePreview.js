@@ -1,22 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { HoldingPageTemplate } from '../../templates/holding-page'
+import { AQSERule71Template } from '../../templates/aqse-rule-71'
 
-const HoldingPagePreview = ({ entry, getAsset }) => {
+const AQSERule71PagePreview
+
+= ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
-      <HoldingPageTemplate
+      <AQSERule71Template
         image={getAsset(data.image)}
         title={data.title}
-        heading={data.heading}
-        intro={data.intro || { blurbs: [] }}
         featuretitle={data.featuretitle}
         mainpitch={data.mainpitch || {}}
-        main={data.main || {}}
-        carousel={data.carousel || { slides: [] }}
-        products={data.products || { slides: [] }}
       />
     )
   } else {
@@ -24,11 +21,15 @@ const HoldingPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-HoldingPagePreview.propTypes = {
+AQSERule71PagePreview
+
+.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default HoldingPagePreview
+export default AQSERule71PagePreview
+
+

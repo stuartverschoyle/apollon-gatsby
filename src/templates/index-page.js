@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import Carousel from '../components/Carousel'
 
 import remark from 'remark'
@@ -16,15 +15,10 @@ const toHTML = value => remark()
                              
 export const IndexPageTemplate = ({
   title,
+  heading, 
   image,
   mainpitch,
-  heading, 
-  featuretitle,
-  intro,
-  main, 
   carousel, 
-  products, 
-
 }) => (
   <div>
     <div
@@ -33,7 +27,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `top center`,
         backgroundAttachment: `fixed`,
       }}
     >
@@ -61,6 +55,12 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
+        <Link style={{
+          width:'200px',
+          marginTop: '30px'
+        }} className="btn" to="/about">
+          Learn more
+        </Link>
       </div>
     </div>
     <section className="section section--gradient">
@@ -70,13 +70,48 @@ export const IndexPageTemplate = ({
             <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-12 is-offset-1">
+                  <div className="column is-3 is-offset-1">
                     <div className="tile">
                       <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
+                  </div>
+                  <div className="column is-6 is-offset-1">
                     <div className="tile">
-                    <p>If you have any queries please contact <a href="mailto:info@apollon.org.uk" style={{color:"#6ec489"}}>info@apollon.org.uk</a></p>                
-                    </div>  
+                      <div
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
+                      />                 
+                    </div>
+                    <Link style={{
+                      width:'322px',
+                      marginTop: '30px'
+                    }} className="btn btnInvert" to="/about">
+                      Learn more about Apollon
+                  </Link>                     
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
+                  </div>
+                </div>
+                <div className="column is-6 is-offset-1">
+                  <div className="tile">
+                    <div
+                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
+                    />                    
                   </div>
                 </div>
               </div>
@@ -84,45 +119,39 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </div>
+    </section>    
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">  
+        <Carousel gridItems={carousel.slides} />
+        </div>                
+      </div> 
     </section>
+
   </div>
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   mainpitch: PropTypes.object,
-  featuretitle: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  main: PropTypes.object,
   carousel: PropTypes.shape({
     slides: PropTypes.array,
-  }), 
-  products: PropTypes.shape({
-    slides: PropTypes.array,
-  }),    
+  }),   
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
+        image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
-        featuretitle = {frontmatter.featuretitle}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
         carousel={frontmatter.carousel}
-        products={frontmatter.products}
       />
-    </Layout>
   )
 }
 
@@ -138,9 +167,10 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "holding-page" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        heading
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -154,25 +184,6 @@ export const pageQuery = graphql`
           subtitle
           subdescription          
         }
-        heading
-        featuretitle
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            header
-            text
-          }
-        }
-        main {
-          heading
-          description                                                                                                 
-        }
         carousel {
           slides {
             image {
@@ -184,19 +195,7 @@ export const pageQuery = graphql`
             }
             alt
           }
-        }
-        products {
-          slides {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 356, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-          }
-        }                       
+        }                      
       }
     }
   }
