@@ -11,6 +11,7 @@ export const NewsAndMediaPageTemplate = ({
   image,
   news,
   video,
+  mainpitch,
   isOpen,
   setOpen,
   videoId,
@@ -70,9 +71,9 @@ export const NewsAndMediaPageTemplate = ({
         <div className="content">       
           <div className="content columns">
             <div className="column is-8 is-offset-2 news">
-              <h1 className="title is-size-3-mobile is-size-3-tablet is-size-3-widescreen">Featured Content</h1>
-              <iframe title="Apollon video" src="https://player.vimeo.com/video/327193904" style={{width: '100%',height:'410px',marginBottom:"20px"}} frameBorder="0" allow="autoplay; fullscreen"></iframe>
-              <p>09.11.2020<br /><span style={{fontFamily:"hk_groteskbold"}}>Apollon Formularies &amp; Doc’s Place International</span></p>
+              <h1 className="title is-size-3-mobile is-size-3-tablet is-size-3-widescreen">{mainpitch.title}</h1>
+              <iframe title="Apollon video" src={`https://player.vimeo.com/video/${mainpitch.vimeoid}`} style={{width: '100%',height:'410px',marginBottom:"20px"}} frameBorder="0" allow="autoplay; fullscreen"></iframe>
+              <p style={{marginBottom:"40px"}}>{mainpitch.date}<br /><span style={{fontFamily:"hk_groteskbold"}}>{mainpitch.vimeotitle}</span></p>
               <VideoGrid 
               gridItems={video.item} 
               isOpen={isOpen}
@@ -92,6 +93,7 @@ export const NewsAndMediaPageTemplate = ({
 NewsAndMediaPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  mainpitch: PropTypes.object, 
   news: PropTypes.shape({
     item: PropTypes.array,
   }),
@@ -114,6 +116,7 @@ const NewsAndMediaPage = ({ data }) => {
         title={frontmatter.title}
         video={frontmatter.video}
         news={frontmatter.news}
+        mainpitch={frontmatter.mainpitch}
         isOpen={isOpen}
         setOpen={setOpen}
         videoId={videoId}
@@ -152,6 +155,12 @@ export const pageQuery = graphql`
             url
           }
         }     
+        mainpitch {
+          vimeoid
+          date 
+          title
+          vimeotitle
+        }
         video {
           item {
             id

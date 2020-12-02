@@ -212,5 +212,15 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Presentations, name: presentations, widget: object, fields: [{label: Downloads, name: downloads, widget: list, fields: [{label: Name, name: name, widget: text},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
           - {label: Reports, name: reports, widget: object, fields: [{label: Downloads, name: downloads, widget: list, fields: [{label: Name, name: name, widget: text},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
+      - file: "src/pages/investor-relations/news-and-media.md"
+        label: "News & Media"
+        name: "news-and-media"    
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "news-and-media"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: News, name: news, widget: object, fields: [{label: Item, name: item, widget: list, fields: [{label: Date, name: date, widget: text},{label: Text, name: text, widget: text},{label: Url, name: url, widget: file}]}]}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: text}]}
+          - {label: Video, name: video, widget: object, fields: [{label: Item, name: item, widget: list, fields: [{label: Vimeo Id, name: id, widget: number},{label: Image, name: image, widget: image},{label: Date, name: date, widget: text},{label: Title, name: title, widget: text}]}]}
 
           

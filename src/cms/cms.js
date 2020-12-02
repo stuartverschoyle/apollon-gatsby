@@ -19,6 +19,7 @@ import JamaicanRegulatoryEnvironmentPagePreview from './preview-templates/Apollo
 import InvestorRelationsPagePreview from './preview-templates/InvestorRelationsPagePreview'
 import ShareHolderPagePreview from './preview-templates/ShareHolderPagePreview'
 import PresentationAndReportsPagePreview from './preview-templates/PresentationAndReportsPagePreview'
+import NewsAndMediaPagePreview from './preview-templates/NewsAndMediaPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -41,4 +42,5 @@ CMS.registerPreviewTemplate('global-regulation', JamaicanRegulatoryEnvironmentPa
 CMS.registerPreviewTemplate('investor-relations', InvestorRelationsPagePreview)
 CMS.registerPreviewTemplate('shareholder-information', ShareHolderPagePreview)
 CMS.registerPreviewTemplate('presentations-and-reports', PresentationAndReportsPagePreview)
+CMS.registerPreviewTemplate('news-and-media', NewsAndMediaPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
