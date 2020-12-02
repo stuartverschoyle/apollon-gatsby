@@ -53,14 +53,8 @@ export const IndexPageTemplate = ({
             color: 'white'
           }}
         >
-          {title}
+          Site launch in the coming weeks
         </h1>
-        <Link style={{
-          width:'200px',
-          marginTop: '30px'
-        }} className="btn" to="/about">
-          Learn more
-        </Link>
       </div>
     </div>
     <section className="section section--gradient">
@@ -70,23 +64,10 @@ export const IndexPageTemplate = ({
             <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-3 is-offset-1">
+                  <div className="column is-10 is-offset-1">
                     <div className="tile">
-                      <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
+                      <p>For more information please contact <a href="mailto:info@apollon.org.uk" style={{color:"#6ec489"}}>info@apollon.org.uk</a></p>
                     </div>
-                  </div>
-                  <div className="column is-6 is-offset-1">
-                    <div className="tile">
-                      <div
-                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                      />                 
-                    </div>
-                    <Link style={{
-                      width:'322px',
-                      marginTop: '30px'
-                    }} className="btn btnInvert" to="/about">
-                      Learn more about Apollon
-                  </Link>                     
                   </div>
                 </div>
 
@@ -96,37 +77,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-12">
-            <div className="content">
-              <div className="content columns">
-                <div className="column is-3 is-offset-1">
-                  <div className="tile">
-                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
-                  </div>
-                </div>
-                <div className="column is-6 is-offset-1">
-                  <div className="tile">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
-                    />                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>    
-    <section className="section section--gradient" style={{marginBottom:'70px'}}>
-      <div className="columns">
-        <div className="column is-12 ">  
-        <Carousel gridItems={carousel.slides} />
-        </div>                
-      </div> 
-    </section>
+  
 
   </div>
 )
