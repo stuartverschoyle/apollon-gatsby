@@ -53,7 +53,7 @@ export const IndexPageTemplate = ({
             color: 'white'
           }}
         >
-          Site launch in the coming weeks
+          Welcome to Apollon Formularies
         </h1>
       </div>
     </div>
@@ -65,6 +65,8 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content columns">
                   <div className="column is-10 is-offset-1">
+                  <h1 class="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">Site launch in the coming weeks</h1>
+
                     <div className="tile">
                       <p>For more information please contact <a href="mailto:info@apollon.org.uk" style={{color:"#6ec489"}}>info@apollon.org.uk</a></p>
                     </div>
