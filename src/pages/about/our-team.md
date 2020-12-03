@@ -37,12 +37,12 @@ intro:
       header: Kevin Sheil
       text: |
         Director
-      description: >
-        A capital markets veteran with over thirty years' experience, Mr. Sheil
-        has experience across a number of sectors.
+      description: >-
+        A capital markets veteran with over thirty years’ experience, Mr. Sheil
+        is currently active in the technology and mining sectors.  
 
 
-        Mr. Sheil began his career at the London Stock Exchange in 1985, before moving into corporate broking with HSBC, Credit Lyonnais and Barclays. Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he worked for over 10 years and was consistently top ranked in Extel & Institutional Investor surveys. Most recently at Citibank, Mr Sheil worked as Head of Multi-Product Sales and was responsible for broking all equity-based products as well as fixed Income into new hedge funds and institutional accounts. After leaving Citibank, Mr Sheil spent over nine years as a general equity fund manager for Trium Capel Managers. As a fund manager, Kevin worked with an active global fund focussed on creating high alpha return.                 
+        Mr. Sheil began his career at the London Stock Exchange in 1985, before moving into corporate broking with HSBC, Credit Lyonnais and Barclays. Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he was top ranked and worked for over ten years, most recently as as Head of Multi-Product Sales before spending over nine years as a general equity fund manager.
   advisory:
     - image: /img/about/herb-fritsche@2x.jpg
       header: HERB FRITSCHE, PH.D
