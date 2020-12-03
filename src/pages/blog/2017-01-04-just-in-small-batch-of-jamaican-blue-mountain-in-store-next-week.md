@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: JAMAICA’S FIRST GLOBAL CENTRE FOR MEDICAL CANNABIS THERAPY OPENS IN NEGRIL
-date: 2017-01-04T15:04:10.000Z
+date: 2019-09-13T14:04:10.000Z
 description: NEGRIL, Westmoreland, Jamaica, September 13, 2019 – Jamaica has
   made a bold step towards capitalizing on the medicinal and revenue earning
   potential of medicinal cannabis. Medical Cannabis Therapy is now a reality
