@@ -39,10 +39,13 @@ intro:
         Director
       description: >-
         A capital markets veteran with over thirty years’ experience, Mr. Sheil
-        is currently active in the technology and mining sectors.  
+        has experience across a number of sectors.
 
 
-        Mr. Sheil began his career at the London Stock Exchange in 1985, before moving into corporate broking with HSBC, Credit Lyonnais and Barclays. Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he was top ranked and worked for over ten years, most recently as as Head of Multi-Product Sales before spending over nine years as a general equity fund manager.
+        Mr Sheil contributes a broad depth of experience and knowledge of capital markets to the board of Apollon. Kevin also brings key expertise to Apollon UK from working as a consultant to an Artificial Intelligence (“AI”) technology firm, providing valuable input as Apollon continues to grow its line of AI-determined patient specific cannabis medicines and commercialise its unique 3D Pharmaceutical Printer.
+
+
+        Mr. Sheil began his career at the London Stock Exchange in 1985, before moving into corporate broking with HSBC, Credit Lyonnais and Barclays. Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he worked for over 10 years and was consistently top ranked in Extel & Institutional Investor surveys. Most recently at Citibank, Mr Sheil worked as Head of Multi-Product Sales and was responsible for broking equity-based products and fixed Income to institutional accounts. After leaving Citibank, Mr Sheil spent over nine years as a general equity fund manager at Trium Capital Managers. As a fund manager, Kevin worked with an active global fund focussed on creating high alpha returns.
   advisory:
     - image: /img/about/herb-fritsche@2x.jpg
       header: HERB FRITSCHE, PH.D
