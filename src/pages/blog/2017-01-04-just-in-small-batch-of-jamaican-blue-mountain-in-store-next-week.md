@@ -11,9 +11,8 @@ featuredpost: true
 featuredimage: /img/ap.jpg
 tags:
   - jamaica
-  - green beans
-  - flavor
-  - tasting
+  - cannibis
+  - tourism
 ---
 Apollon Formularies commenced treating of patients on Thursday 1st August, 2019, to coincide with Emancipation Day and the Dream Weekend, an annual entertainment event in Negril.
 
