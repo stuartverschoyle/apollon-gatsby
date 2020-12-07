@@ -1,24 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
-import Carousel from '../components/Carousel'
-
-import remark from 'remark'
-import remarkHTML from 'remark-html'
-
-const toHTML = value => remark()
-                            .use(remarkHTML)
-                            .processSync(value)
-                            .toString()
                              
 export const IndexPageTemplate = ({
-  title,
   heading, 
   image,
-  mainpitch,
-  carousel, 
 }) => (
   <div>
     <div

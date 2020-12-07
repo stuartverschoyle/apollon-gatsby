@@ -1,16 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react';
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Featuresthree from '../components/Features-three'
 import Featuresfour from '../components/Features-four'
 
 import Layout from '../components/Layout'
-                          
+
 export const OurTeamPageTemplate = ({
   title,
   image,
   mainpitch,
-  intro
+  intro,
+  readMore,
+  readMoreAdvisory,
+  toggleComment,
+  toggleMore
 }) => (
   <div>
     <div
@@ -60,7 +64,7 @@ export const OurTeamPageTemplate = ({
                     <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                   </div>
                 </div>
-                <Featuresthree gridItems={intro.blurbs} />             
+                <Featuresthree gridItems={intro.blurbs} readMore={readMore} toggleComment={toggleComment} />             
               </div>
             </div>
           </div>
@@ -79,7 +83,7 @@ export const OurTeamPageTemplate = ({
                   </div>
                 </div>
               </div>
-              <Featuresfour gridItems={intro.advisory} /> 
+              <Featuresfour gridItems={intro.advisory} readMoreAdvisory={readMoreAdvisory} toggleMore={toggleMore}  /> 
             </div>
           </div>
         </div>
@@ -96,11 +100,26 @@ OurTeamPageTemplate.propTypes = {
     blurbs: PropTypes.array,
     advisory: PropTypes.array,
   }),
+  readMore:PropTypes.string,
+  setReadMore:PropTypes.string,
 }
 
 const OurTeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+  const [readMore,setReadMore] = useState({});
+  const [readMoreAdvisory,setreadMoreAdvisory] = useState({});
+  const toggleComment = id => {
+    setReadMore(prevReadMore => ({
+      ...prevReadMore,
+      [id]: !prevReadMore[id]
+    }));
+  };
+  const toggleMore = id => {
+    setreadMoreAdvisory(prevReadMore => ({
+      ...prevReadMore,
+      [id]: !prevReadMore[id]
+    }));
+  };  
   return (
     <Layout>
       <OurTeamPageTemplate
@@ -108,6 +127,10 @@ const OurTeamPage = ({ data }) => {
         image={frontmatter.image}
         mainpitch={frontmatter.mainpitch}
         intro={frontmatter.intro}
+        readMore={readMore}
+        readMoreAdvisory={readMoreAdvisory}
+                toggleComment={toggleComment}
+        toggleMore={toggleMore}
       />
     </Layout>
   )

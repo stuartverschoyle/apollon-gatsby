@@ -47,8 +47,6 @@ const Footer = class extends React.Component {
                 <ul>
                   <li><Link className="navbar-item" to="/regulation/apollon-licences">Apollon Licences</Link></li>
                   <li><Link className="navbar-item" to="/regulation/jamaican-regulatory-environment">Jamaican regulatory environment</Link></li>
-                  <li><Link className="navbar-item" to="/regulation/uk-regulation">UK regulation</Link></li>
-                  <li><Link className="navbar-item" to="/regulation/global-regulation">Global regulation</Link></li>
                 </ul>                   
               </div>
               <div className="column is-3">

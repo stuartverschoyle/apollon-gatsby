@@ -12,13 +12,8 @@ intro:
       header: Dr Stephen Barnhill
       text: |
         Chairman & CEO
-      description: >-
-        Dr. Stephen Barnhill is a medical doctor with 35 years’ experience as
-        Chairman and CEO of numerous publicly traded and private companies
-        specializing in laboratory medicine, biotechnology, and pharmaceuticals.
-        He was an early pioneer in the use of artificial intelligence (machine
-        learning) techniques in medicine, primarily in the field of cancer
-        diagnostics. 
+      description: >
+        Dr. Stephen Barnhill is a medical doctor with 35 years’ experience as Chairman and CEO of numerous publicly traded and private companies specializing in laboratory medicine, biotechnology, and pharmaceuticals. He was an early pioneer in the use of artificial intelligence (machine learning) techniques in medicine, primarily in the field of cancer diagnostics.
 
 
         Dr. Barnhill is an inventor on more than 40 international patents on artificial intelligence and his patents were part of the Intellectual Property portfolio that won MDB Capital’s MICO Award for most disruptive IP portfolio out of 1,600 publicly traded companies. Some of Dr. Barnhill’s early AI patents were acquired by Johnson and Johnson.
@@ -27,22 +22,22 @@ intro:
       text: |
         Director
       description: >
-        Nick is a founding member of Apollon Formularies, Inc., a US corporation
-        formed in 2013 to study and understand the benefits of medical cannabis
-        to patients with varying medical conditions.
+        Nick is a founding member of Apollon Formularies, Inc., a US corporation formed in 2013 to study and understand the benefits of medical cannabis to patients with varying medical conditions.
 
 
-        In 2015, Nick was a key part of the team that oversaw the implementation of Apollon Formularies international expansion into Jamaica to lever off federal legislation allowing medical cannabis research and development (human experimental). Nick resided in Jamaica where he oversaw the roll out of Apollon Formularies Jamaica Ltd which has grown into a vertically integrated fully licensed medical cannabis company (licensed by the Cannabis Licensing Authority (CLA). 
+        In 2015, Nick was a key part of the team that oversaw the implementation of Apollon Formularies international expansion into Jamaica to lever off federal legislation allowing medical cannabis research and development (human experimental). Nick resided in Jamaica where he oversaw the roll out of Apollon Formularies Jamaica Ltd which has grown into a vertically integrated fully licensed medical cannabis company (licensed by the Cannabis Licensing Authority (CLA).
     - image: /img/about/kevin-sheil@2x.jpg
       header: Kevin Sheil
       text: |
         Director
       description: >
-        A capital markets veteran with over thirty years' experience, Mr. Sheil
-        has experience across a number of sectors.
+        A capital markets veteran with over 30 years’ experience, Mr. Sheil has experience across a number of sectors. 
 
 
-        Mr. Sheil began his career at the London Stock Exchange in 1985, before moving into corporate broking with HSBC, Credit Lyonnais and Barclays. Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he worked for over 10 years and was consistently top ranked in Extel & Institutional Investor surveys. Most recently at Citibank, Mr Sheil worked as Head of Multi-Product Sales and was responsible for broking all equity-based products as well as fixed Income into new hedge funds and institutional accounts. After leaving Citibank, Mr Sheil spent over nine years as a general equity fund manager for Trium Capel Managers. As a fund manager, Kevin worked with an active global fund focussed on creating high alpha return.                 
+        Mr Sheil contributes a broad depth of experience and knowledge of capital markets to the board of Apollon. Kevin also brings key expertise to Apollon UK from working as a consultant to an Artificial Intelligence (“AI”) technology firm, providing valuable input as Apollon continues to grow its line of AI-determined patient specific cannabis medicines and commercialise its unique 3D Pharmaceutical Printer.
+
+
+        Mr. Sheil began his career at the London Stock Exchange before moving into corporate broking with HSBC, Credit Lyonnais and Barclays.  Mr. Sheil was a telecom sector specialist with Barclays, Credit Suisse and then Citibank where he worked for over 10 years and was consistently top ranked in Extel & Institutional Investor surveys. Mr Sheil worked as Head of Multi-Product Sales at Citibank and was responsible for broking all equity-based products. Mr Sheil has also spent over nine years as a general equity fund manager for Trium Capital Managers.               
   advisory:
     - image: /img/about/herb-fritsche@2x.jpg
       header: HERB FRITSCHE, PH.D

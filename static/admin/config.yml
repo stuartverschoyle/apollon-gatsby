@@ -145,14 +145,6 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}
-      - file: "src/pages/regulation/global-regulation.md"
-        label: "Global Regulation"
-        name: "global-regulation"    
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "global-regulation"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}]}
       - file: "src/pages/regulation/jamaican-regulatory-environment.md"
         label: "Jamaican Regulatory Environment"
         name: "jamaican-regulatory-environment"    
@@ -160,15 +152,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "jamaican-regulatory-environment"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}
-      - file: "src/pages/regulation/uk-regulation.md"
-        label: "UK Regulation"
-        name: "uk-regulation"    
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "uk-regulation"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown}]}                    
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Description, name: description, widget: markdown},{label: List, name: list, widget: markdown}]}                
       - file: "src/pages/investor-relations/index.md"
         label: "Investor Relations"
         name: "investor-relations"    

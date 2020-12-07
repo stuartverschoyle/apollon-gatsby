@@ -65,11 +65,16 @@ export const JamaicanRegulatoryEnvironmentPageTemplate = ({
                     <div className="tile">
                       <div
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
-                      />
+                      />                    
                     </div>
                     <div>
+                      <div style={{marginLeft: "20px"}}
+                          dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
+                        />                        
+                    </div>
+                    {/* <div>
                       <button className="btn btnInvert" style={{width: "178px", marginTop:"20px"}}>Learn More</button>
-                    </div>                    
+                    </div>                     */}
                   </div>               
                 </div>
               </div>
@@ -127,6 +132,7 @@ export const pageQuery = graphql`
         }
         mainpitch {
           description
+          list
         }
         heading                      
       }
