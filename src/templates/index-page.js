@@ -1,11 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
+import Layout from '../components/Layout'
+import Carousel from '../components/Carousel'
+
+import remark from 'remark'
+import remarkHTML from 'remark-html'
+
+const toHTML = value => remark()
+                            .use(remarkHTML)
+                            .processSync(value)
+                            .toString()
                              
 export const IndexPageTemplate = ({
+  title,
   heading, 
   image,
+  mainpitch,
+  carousel, 
 }) => (
   <div>
     <div
@@ -40,8 +53,14 @@ export const IndexPageTemplate = ({
             color: 'white'
           }}
         >
-          Welcome to Apollon Formularies
+          {title}
         </h1>
+        <Link style={{
+          width:'200px',
+          marginTop: '30px'
+        }} className="btn" to="/about">
+          Learn more
+        </Link>
       </div>
     </div>
     <section className="section section--gradient">
@@ -51,12 +70,23 @@ export const IndexPageTemplate = ({
             <div className="column is-12">
               <div className="content">
                 <div className="content columns">
-                  <div className="column is-10 is-offset-1">
-                  <h1 class="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">Site launch in the coming weeks</h1>
-
+                  <div className="column is-3 is-offset-1">
                     <div className="tile">
-                      <p>For more information please contact <a href="mailto:info@apollon.org.uk" style={{color:"#6ec489"}}>info@apollon.org.uk</a></p>
+                      <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.title}</h1>
                     </div>
+                  </div>
+                  <div className="column is-6 is-offset-1">
+                    <div className="tile">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.description)}}
+                      />                 
+                    </div>
+                    <Link style={{
+                      width:'322px',
+                      marginTop: '30px'
+                    }} className="btn btnInvert" to="/about">
+                      Learn more about Apollon
+                  </Link>                     
                   </div>
                 </div>
 
@@ -66,7 +96,37 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  
+    <section className="section section--gradient">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-12">
+            <div className="content">
+              <div className="content columns">
+                <div className="column is-3 is-offset-1">
+                  <div className="tile">
+                    <h1 className="title is-size-3-mobile is-size-2-tablet is-size-2-widescreen">{mainpitch.subtitle}</h1>
+                  </div>
+                </div>
+                <div className="column is-6 is-offset-1">
+                  <div className="tile">
+                    <div
+                      dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.subdescription)}}
+                    />                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>    
+    <section className="section section--gradient" style={{marginBottom:'70px'}}>
+      <div className="columns">
+        <div className="column is-12 ">  
+        <Carousel gridItems={carousel.slides} />
+        </div>                
+      </div> 
+    </section>
 
   </div>
 )
@@ -85,6 +145,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
+    <Layout>
       <IndexPageTemplate
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -92,6 +153,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         carousel={frontmatter.carousel}
       />
+    </Layout>
   )
 }
 

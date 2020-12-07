@@ -86,7 +86,7 @@ export const DocsPlacePageTemplate = ({
                         dangerouslySetInnerHTML={{ __html: toHTML(mainpitch.list)}}
                       />
                     </div>
-                    <button className="btn btnInvert" style={{width: "240px", display:"block", margin:"20px auto"}}>Find Out More</button>
+                    {/* <button className="btn btnInvert" style={{width: "240px", display:"block", margin:"20px auto"}}>Find Out More</button> */}
                   </div>
                 </div>
               </div>                           
